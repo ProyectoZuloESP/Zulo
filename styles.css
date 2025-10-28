@@ -1,0 +1,200 @@
+/* styles.css
+   Comentarios en español: estilos generales y responsive.
+   Paleta basada en la ayuda de colores que me diste. */
+
+/* Variables de color para mantener coherencia */
+:root{
+  --primary-700: #00B8A9;    /* turquesa principal */
+  --primary-600: #0099FF;    /* azul alternativo (usar con moderación) */
+  --accent: #FF6B6B;         /* coral para botones/acento */
+  --mint: #9CF6F6;           /* menta suave */
+  --lime: #A8E10C;           /* verde lima suave */
+  --white: #ffffff;
+  --neutral-100: #F2F2F2;    /* gris claro */
+  --text: #111827;
+  --muted: #6B7280;
+  --shadow: 0 6px 18px rgba(16,24,40,0.08);
+  --radius-lg: 16px;
+  --radius-md: 10px;
+}
+
+/* Reset básico y tipografías */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Contenedor ancho controlado */
+.container{
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+/* HEADER / NAVBAR */
+.site-header{
+  background: var(--white);
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 18px 0;
+}
+.logo{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.brand{
+  font-family: "Montserrat", sans-serif;
+  font-weight:700;
+  color:var(--primary-700);
+  text-transform: lowercase;
+  letter-spacing: 0.4px;
+  font-size: 20px;
+}
+
+/* Acciones a la derecha (Sign in / Sign up) */
+.nav-actions a{
+  margin-left: 18px;
+  text-decoration:none;
+  font-size:15px;
+  color:var(--muted);
+}
+.nav-actions .signup{
+  padding:8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+  color:var(--text);
+}
+
+/* HERO: banner grande turquesa */
+.hero{
+  background: var(--primary-700);
+  color: var(--white);
+  padding: 72px 0 56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+/* inner del hero: separa el contenido y limita ancho */
+.hero-inner{
+  width: min(900px, 92%);
+}
+.hero-title{
+  margin:0 0 12px 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight:800;
+  font-size: clamp(28px, 5vw, 56px); /* grande y responsive */
+  line-height: 1.02;
+  letter-spacing: -0.6px;
+}
+.hero-sub{
+  margin:0 0 28px 0;
+  font-size:18px;
+  font-weight:400;
+  color: rgba(255,255,255,0.93);
+}
+
+/* CTA boton grande coral */
+.cta{
+  display:inline-block;
+  background: var(--accent);
+  color:var(--white);
+  text-decoration:none;
+  padding: 14px 34px;
+  border-radius: 28px;
+  font-weight:600;
+  box-shadow: 0 8px 20px rgba(255,107,107,0.12);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.cta:hover{ transform: translateY(-3px); box-shadow: 0 14px 30px rgba(255,107,107,0.18); }
+
+/* MAIN CONTENT: listado de cards */
+.main-content{
+  padding: 40px 0 80px;
+}
+.listings{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+/* Card individual */
+.card{
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(16,24,40,0.08);
+}
+.card-image{
+  width:100%;
+  aspect-ratio: 16/10; /* mantiene proporción */
+  overflow:hidden;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Texto dentro de la card */
+.card-body{
+  padding: 18px 20px 26px;
+}
+.card-title{
+  margin:0 0 8px 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight:600;
+  font-size:18px;
+}
+.price{
+  margin:0;
+  font-size:20px;
+  font-weight:700;
+  color:var(--text);
+}
+
+/* Footer */
+.site-footer{
+  border-top:1px solid #eee;
+  padding: 22px 0;
+  color: var(--muted);
+  font-size:14px;
+  text-align:center;
+}
+
+/* Responsive: en pantallas pequeñas poner columnas 1 y ajustar hero */
+@media (max-width: 900px){
+  .listings{ grid-template-columns: repeat(2, 1fr); gap:18px; }
+  .hero{ padding:48px 0; }
+  .hero-title{ font-size: clamp(22px, 6vw, 40px); }
+}
+@media (max-width: 600px){
+  .listings{ grid-template-columns: 1fr; }
+  .nav-actions a{ margin-left: 8px; font-size:14px; }
+  .header-inner{ padding:12px 0; }
+  .hero-inner{ padding: 0 8px; }
+  .cta{ padding: 12px 22px; font-size:15px; }
+}
