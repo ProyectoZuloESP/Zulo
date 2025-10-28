@@ -1,1 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Roomix — Encuentra tu piso compartido</title>
+
+  <!-- Enlaza la hoja de estilos -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Tipografía: usar Google Fonts (montserrat y open sans) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Logo (puedes sustituir por una imagen real) -->
+      <div class="logo">
+        <svg width="36" height="28" viewBox="0 0 24 20" aria-hidden="true" focusable="false">
+          <!-- simple icono casa -->
+          <path fill="#00B8A9" d="M12 1.5L1 9v9a1 1 0 0 0 1 1h6v-6h6v6h6a1 1 0 0 0 1-1V9L12 1.5z"/>
+        </svg>
+        <span class="brand">roomix</span>
+      </div>
+
+      <!-- enlaces de la derecha -->
+      <nav class="nav-actions" aria-label="Acciones">
+        <a href="#" class="signin">Sign in</a>
+        <a href="#" class="signup">Sign up</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1 class="hero-title">Find your ideal shared apartment</h1>
+      <p class="hero-sub">Browse rooms for rent in apartments near campus</p>
+      <a class="cta" href="#">Get started</a>
+    </div>
+  </section>
+
+  <!-- CARDS / LISTADO -->
+  <main class="container main-content">
+    <section class="listings">
+      <!-- Cada tarjeta representa una oferta -->
+      <article class="card">
+        <div class="card-image">
+          <!-- Placeholder de imagen; sustituye por <img src="..."> reales -->
+          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80&auto=format&fit=crop&crop=entropy" alt="Sala 2 Bed 1 Bath">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">2 Bed, 1 Bath</h3>
+          <p class="price">$1,200/mo</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1560448071-1a1a67b3d6f0?w=1200&q=80&auto=format&fit=crop&crop=entropy" alt="Sala 3 Bed 2 Bath">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">3 Bed, 2 Bath</h3>
+          <p class="price">$1,500/mo</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1560448200-2b6d6b5b6b5f?w=1200&q=80&auto=format&fit=crop&crop=entropy" alt="Sala 1 Bed 1 Bath">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">1 Bed, 1 Bath</h3>
+          <p class="price">$1,000/mo</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer mínimo -->
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Roomix — All rights reserved</small>
+    </div>
+  </footer>
+
+  <!-- Script JS -->
+  <script src="script.js"></script>
+</body>
+</html>
 
