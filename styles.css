@@ -199,6 +199,17 @@ body{
   margin: 0;
 }
 
+.footer-legal a {
+  color: var(--muted);
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.footer-legal a:hover {
+  color: var(--primary-700);
+}
+
+
 
 /* Responsive: en pantallas pequeñas poner columnas 1 y ajustar hero */
 @media (max-width: 900px){
