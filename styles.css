@@ -210,6 +210,50 @@ body{
 }
 
 
+/* ===== Estilos para páginas legales ===== */
+.legal {
+  max-width: 900px;
+  margin: 60px auto;
+  line-height: 1.7;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.legal h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: #00B8A9;
+  margin-bottom: 20px;
+}
+
+.legal h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  color: #008C7A;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.legal p,
+.legal ul {
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.legal ul {
+  padding-left: 20px;
+}
+
+.legal a {
+  color: #00B8A9;
+  text-decoration: none;
+}
+
+.legal a:hover {
+  text-decoration: underline;
+}
+
+
 
 /* Responsive: en pantallas pequeñas poner columnas 1 y ajustar hero */
 @media (max-width: 900px){
