@@ -176,14 +176,29 @@ body{
   color:var(--text);
 }
 
-/* Footer */
-.site-footer{
-  border-top:1px solid #eee;
-  padding: 22px 0;
-  color: var(--muted);
-  font-size:14px;
-  text-align:center;
+/* FOOTER */
+.site-footer {
+  border-top: 1px solid #eee;
+  padding: 28px 0;
+  text-align: center;
+  background: var(--white);
 }
+
+.footer-slogan {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: var(--primary-700);
+  font-size: 15px;
+  margin: 0 0 4px 0;
+  letter-spacing: 0.2px;
+}
+
+.footer-legal {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+
 
 /* Responsive: en pantallas pequeñas poner columnas 1 y ajustar hero */
 @media (max-width: 900px){
