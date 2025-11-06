@@ -68,6 +68,7 @@ body{
   align-items: center;
   text-decoration: none;
   color: inherit;
+}
 
 /* Acciones a la derecha (Sign in / Sign up) */
 .nav-actions a{
