@@ -68,11 +68,6 @@ body{
   align-items: center;
   text-decoration: none;
   color: inherit;
-}
-
-.logo-link:hover .brand {
-  text-decoration: underline;
-}
 
 /* Acciones a la derecha (Sign in / Sign up) */
 .nav-actions a{
