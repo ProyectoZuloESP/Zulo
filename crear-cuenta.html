@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Roomix — Crear cuenta</title>
+
+  <!-- Enlaza la hoja de estilos -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Tipografía -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <svg width="36" height="28" viewBox="0 0 24 20" aria-hidden="true" focusable="false">
+            <path fill="#00B8A9" d="M12 1.5L1 9v9a1 1 0 0 0 1 1h6v-6h6v6h6a1 1 0 0 0 1-1V9L12 1.5z"/>
+          </svg>
+          <span class="brand">roomix</span>
+        </a>
+      </div>
+      <nav class="nav-actions" aria-label="Acciones">
+        <a href="#" class="signin">Acceder</a>
+        <a href="registro.html" class="signup">Crear cuenta</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SECCIÓN PRINCIPAL -->
+  <main class="registro-container">
+    <div class="registro-content">
+      <h1 id="intro-text">¿Qué quieres hacer en Roomix?</h1>
+
+      <div class="rol-options hidden" id="rol-options">
+        <div class="rol-card" data-rol="buscador">
+          <h2>🔍 Buscar habitaciones</h2>
+          <p>Encuentra tu espacio ideal y comparte con personas afines.</p>
+        </div>
+        <div class="rol-card" data-rol="anfitrion">
+          <h2>🏠 Ofrecer habitaciones</h2>
+          <p>Publica tus anuncios y conecta con nuevos compañeros.</p>
+        </div>
+        <div class="rol-card" data-rol="ambos">
+          <h2>🤝 Ambas cosas</h2>
+          <p>Explora, publica y disfruta de toda la experiencia Roomix.</p>
+        </div>
+      </div>
+
+      <p class="rol-info hidden" id="rol-info">
+        Esta información se usará para personalizar tu perfil y mejorar tu experiencia.  
+        Podrás cambiar estas opciones más adelante desde los ajustes de tu cuenta.
+      </p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-slogan">
+        Roomix — Conectando personas, creando hogares.
+      </p>
+      <p class="footer-legal">
+        <a href="terminos.html">Términos y Condiciones</a> |
+        <a href="privacidad.html">Política de Privacidad</a> |
+        <a href="cookies.html">Política de Cookies</a><br><br>
+        © <span id="year"></span> Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Mostrar año actual en footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Animación inicial
+    window.addEventListener('DOMContentLoaded', () => {
+      const intro = document.getElementById('intro-text');
+      const rolOptions = document.getElementById('rol-options');
+      const rolInfo = document.getElementById('rol-info');
+
+      // Paso 1: animación de entrada
+      intro.classList.add('intro-active');
+
+      // Paso 2: tras unos segundos, sube el texto y muestra las opciones
+      setTimeout(() => {
+        intro.classList.add('intro-small');
+        rolOptions.classList.remove('hidden');
+        rolOptions.classList.add('fade-in');
+        rolInfo.classList.remove('hidden');
+        rolInfo.classList.add('fade-in');
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
