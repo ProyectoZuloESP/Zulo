@@ -388,7 +388,7 @@ body{
 }
 
 .rol-info strong {
-  color: var(--primary-700);
+  color: var(--text);
   font-weight: 700;
   display: inline;
 }
