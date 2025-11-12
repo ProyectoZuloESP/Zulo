@@ -296,8 +296,7 @@ body{
   position: relative;
 }
 
-
-/* Animación del texto */
+/* ===== Animación del texto ===== */
 #intro-text {
   font-family: "Montserrat", sans-serif;
   font-size: 42px;
@@ -323,42 +322,11 @@ body{
   }
   100% {
     opacity: 1;
-    transform: translateY(-180px); /* antes -60px, ahora más cerca */
+    transform: translateY(-180px); /* posición final en escritorio */
   }
 }
 
-/* Versión móvil */
-@media (max-width: 700px) {
-  .rol-options {
-    margin-top: 20px; /* antes 80px */
-  }
-
-  #intro-text {
-    animation: fadeInMoveUpMobile 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-
-  @keyframes fadeInMoveUpMobile {
-    0% {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    30% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    70% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(-30px); /* más cercano a los botones */
-    }
-  }
-}
-
-
-/* Opciones */
+/* ===== Opciones de rol ===== */
 .rol-options {
   display: flex;
   justify-content: center;
@@ -369,7 +337,7 @@ body{
 
 .rol-card {
   background: var(--white);
-  color: var(--accent); /* Coral para texto interior */
+  color: var(--accent);
   border: 2px solid var(--accent);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
@@ -397,11 +365,11 @@ body{
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* Info inferior */
+/* ===== Texto informativo inferior ===== */
 .rol-info {
   margin-top: 70px;
   font-size: 16.5px;
-  color: var(--muted); /* Color gris suave */
+  color: var(--muted);
   font-weight: 500;
   line-height: 1.6;
   max-width: 700px;
@@ -409,12 +377,12 @@ body{
 }
 
 .rol-info strong {
-  color: var(--text) !important; /* gris oscuro */
+  color: var(--text) !important;
   font-weight: 700;
   display: inline;
 }
 
-/* Animaciones */
+/* ===== Animaciones secundarias ===== */
 .hidden {
   display: none;
 }
@@ -434,19 +402,47 @@ body{
   }
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 700px) {
+  /* Ajustes de animación y espaciado en móvil */
+  #intro-text {
+    font-size: 30px;
+    line-height: 1.2;
+    animation: fadeInMoveUpMobile 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes fadeInMoveUpMobile {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    30% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    70% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(-18px); /* ajustado para que quede más cerca de los botones */
+    }
+  }
+
+  .rol-options {
+    margin-top: 26px; /* antes 50px */
+    gap: 22px;
+  }
+
   .rol-card {
     width: 100%;
   }
 
-  #intro-text.intro-move {
-    transform: translateY(-60px);
-    font-size: 22px;
-  }
-
   .rol-info {
-    font-size: 15px;
-    margin-top: 50px;
+    font-size: 14.5px;
+    margin-top: 38px;
+    line-height: 1.5;
   }
 }
+
