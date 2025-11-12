@@ -296,7 +296,7 @@ body{
   position: relative;
 }
 
-/* Texto inicial (fade + movimiento continuo y suave) */
+/* Texto inicial: fade in + desplazamiento suave hacia su posición final */
 #intro-text {
   font-family: "Montserrat", sans-serif;
   font-size: clamp(28px, 5vw, 48px);
@@ -304,47 +304,46 @@ body{
   font-weight: 800;
   opacity: 0;
   transform: translateY(60px);
-  animation: fadeUpAndMove 4s ease-in-out forwards;
+  animation: fadeAndLift 3.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-@keyframes fadeUpAndMove {
+@keyframes fadeAndLift {
   0% {
     opacity: 0;
     transform: translateY(60px);
   }
-  30% {
+  40% {
     opacity: 1;
     transform: translateY(0);
   }
   100% {
     opacity: 1;
-    transform: translateY(-80px);
-    font-size: 26px;
+    transform: translateY(-100px); /* queda justo arriba de los botones */
   }
 }
 
-/* Versión móvil */
+/* Versión móvil: movimiento un poco más corto */
 @media (max-width: 700px) {
   #intro-text {
-    animation: fadeUpAndMoveMobile 4s ease-in-out forwards;
+    animation: fadeAndLiftMobile 3.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
-  @keyframes fadeUpAndMoveMobile {
+  @keyframes fadeAndLiftMobile {
     0% {
       opacity: 0;
       transform: translateY(60px);
     }
-    30% {
+    40% {
       opacity: 1;
       transform: translateY(0);
     }
     100% {
       opacity: 1;
-      transform: translateY(-60px);
-      font-size: 22px;
+      transform: translateY(-70px); /* menos desplazamiento en pantallas pequeñas */
     }
   }
 }
+
 
 /* Opciones */
 .rol-options {
