@@ -299,7 +299,7 @@ body{
 /* Texto inicial: fade in + desplazamiento suave hacia arriba */
 #intro-text {
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(28px, 5vw, 48px);
+  font-size: 42px; /* tamaño fijo */
   color: var(--primary-700);
   font-weight: 800;
   opacity: 0;
