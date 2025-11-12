@@ -333,9 +333,9 @@ body{
 }
 
 .rol-card {
-  background: #fff;
+  background: var(--white);
   color: var(--primary-700);
-  border: 2px solid #ff6f61;
+  border: 2px solid var(--accent);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
   padding: 30px 24px;
@@ -356,8 +356,8 @@ body{
 }
 
 .rol-card:hover {
-  background: #ff6f61;
-  color: #fff;
+  background: var(--accent);
+  color: var(--white);
   transform: translateY(-6px);
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
 }
