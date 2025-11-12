@@ -287,14 +287,17 @@ body{
   text-align: center;
   background: var(--neutral-100);
   padding: 40px 20px;
+  overflow: hidden;
 }
 
 .crear_cuenta-content {
   max-width: 800px;
   width: 100%;
   position: relative;
+  z-index: 2;
 }
 
+/* Texto inicial */
 #intro-text {
   font-family: "Montserrat", sans-serif;
   font-size: clamp(28px, 5vw, 48px);
@@ -312,65 +315,84 @@ body{
   }
 }
 
-/* Transición al fondo */
-.intro-active {
-  opacity: 1;
+.intro-move {
+  animation: moveUpSmooth 1.2s ease forwards;
 }
 
-.intro-small {
-  font-size: 24px;
-  transform: translateY(-80px);
-  transition: all 1s ease;
+@keyframes moveUpSmooth {
+  0% { transform: translateY(0); font-size: clamp(28px, 5vw, 48px); }
+  100% { transform: translateY(-100px); font-size: 24px; }
 }
 
-/* Opciones de rol */
+/* Fondo tipo hero detrás de las tarjetas */
+.rol-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 380px;
+  background: var(--primary-700);
+  border-radius: 100px / 40px;
+  z-index: -1;
+  opacity: 0;
+}
+
+.fade-in-bg {
+  animation: fadeInBg 1.2s ease forwards;
+}
+
+@keyframes fadeInBg {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Opciones */
 .rol-options {
   display: flex;
   justify-content: center;
-  gap: 24px;
-  margin-top: 60px;
+  gap: 28px;
+  margin-top: 80px;
   flex-wrap: wrap;
 }
 
 .rol-card {
-  background: var(--white);
+  background: var(--accent);
+  color: var(--white);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
-  padding: 28px 22px;
-  width: 240px;
-  transition: transform .2s ease, box-shadow .2s ease, background .2s;
+  padding: 30px 24px;
+  width: 260px;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
   cursor: pointer;
 }
 
 .rol-card h2 {
   font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  color: var(--primary-700);
-  margin-bottom: 8px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .rol-card p {
   font-size: 14px;
-  color: var(--muted);
+  opacity: 0.9;
 }
 
 .rol-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(16,24,40,0.1);
-  background: var(--mint);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.1);
+  background: #ff8181; /* tono coral más claro */
 }
 
 /* Info inferior */
 .rol-info {
-  margin-top: 40px;
+  margin-top: 50px;
   font-size: 14px;
   color: var(--muted);
   line-height: 1.6;
 }
 
-.hidden {
-  display: none;
-}
+.hidden { display: none; }
 
 .fade-in {
   animation: fadeIn 0.8s ease forwards;
@@ -386,8 +408,12 @@ body{
   .rol-card {
     width: 100%;
   }
-  .intro-small {
+  .rol-bg {
+    height: 300px;
+  }
+  #intro-text.intro-move {
+    transform: translateY(-70px);
     font-size: 20px;
-    transform: translateY(-60px);
   }
 }
+
