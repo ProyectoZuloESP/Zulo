@@ -320,9 +320,13 @@ body{
     opacity: 1;
     transform: translateY(0);
   }
+   90% {
+    opacity: 1;
+    transform: translateY(-80px);
+  }
   100% {
     opacity: 1;
-    transform: translateY(-180px); /* ✅ no se toca, PC perfecto */
+    transform: translateY(-120px); /* no se toca, PC perfecto */
   }
 }
 
@@ -351,9 +355,13 @@ body{
       opacity: 1;
       transform: translateY(0);
     }
+     100% {
+      opacity: 1;
+      transform: translateY(-20px); /* menos distancia, texto más cerca de los botones */
+    }
     100% {
       opacity: 1;
-      transform: translateY(-10px); /* 🔽 menos distancia, texto más cerca de los botones */
+      transform: translateY(-30px); /* menos distancia, texto más cerca de los botones */
     }
   }
 }
