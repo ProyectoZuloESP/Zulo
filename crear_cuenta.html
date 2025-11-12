@@ -67,21 +67,21 @@
 
  <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
+  
   window.addEventListener('DOMContentLoaded', () => {
     const intro = document.getElementById('intro-text');
     const rolOptions = document.getElementById('rol-options');
     const rolInfo = document.getElementById('rol-info');
-
+  
     // Aparece el texto inicial con fade-in
     intro.classList.add('intro-active');
-
-    // Luego se mueve suavemente hacia arriba
+  
+    // Después de 2s, se mueve suavemente hacia arriba usando transition
     setTimeout(() => {
       intro.classList.add('intro-move');
     }, 2000);
-
-    // Finalmente, aparecen las opciones y el texto informativo
+  
+    // Finalmente, aparecen las opciones y la info inferior
     setTimeout(() => {
       rolOptions.classList.remove('hidden');
       rolOptions.classList.add('fade-in');
@@ -89,7 +89,8 @@
       rolInfo.classList.add('fade-in');
     }, 3200);
   });
-</script>
+  </script>
+
 
 </body>
 </html>
