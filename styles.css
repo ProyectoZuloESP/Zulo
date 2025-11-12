@@ -440,10 +440,11 @@ body{
     width: 100%;
   }
 
+   /*
   #intro-text.intro-move {
-    transform: translateY(-40px); /* un poco menos agresivo */
+    transform: translateY(-40px);
     font-size: 22px;
-  }
+  } */
 
   .rol-info {
     font-size: 15px;
