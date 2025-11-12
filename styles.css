@@ -363,7 +363,7 @@ body{
   display: flex;
   justify-content: center;
   gap: 28px;
-  margin-top: 40px;
+  margin-top: 60px;
   flex-wrap: wrap;
 }
 
