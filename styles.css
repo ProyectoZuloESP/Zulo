@@ -304,37 +304,25 @@ body{
   font-weight: 800;
   opacity: 0;
   transform: translateY(40px);
-  animation: fadeUp 1.2s ease forwards;
 }
 
-@keyframes fadeUp {
+/* Nueva animación fluida combinada */
+.intro-animate {
+  animation: fadeAndMoveUp 2.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeAndMoveUp {
   0% {
     opacity: 0;
     transform: translateY(40px);
   }
-  100% {
+  40% {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Movimiento más fluido hacia arriba */
-.intro-active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.intro-move {
-  animation: moveUpSmooth 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes moveUpSmooth {
-  0% {
-    transform: translateY(0);
-    font-size: clamp(28px, 5vw, 48px);
-  }
   100% {
     transform: translateY(-90px);
+    opacity: 1;
     font-size: 26px;
   }
 }
@@ -388,7 +376,7 @@ body{
 }
 
 .rol-info strong {
-  color: #374151; /* gris oscuro más profesional */
+  color: #1f2937; /* gris oscuro elegante */
   display: block;
   margin-bottom: 6px;
   font-weight: 700;
@@ -420,9 +408,24 @@ body{
     width: 100%;
   }
 
-  #intro-text.intro-move {
-    transform: translateY(-60px);
-    font-size: 22px;
+  #intro-text.intro-animate {
+    animation: fadeAndMoveUpMobile 2.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes fadeAndMoveUpMobile {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    40% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-60px);
+      opacity: 1;
+      font-size: 22px;
+    }
   }
 
   .rol-info {
@@ -430,3 +433,4 @@ body{
     margin-top: 50px;
   }
 }
+
