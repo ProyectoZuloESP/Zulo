@@ -304,7 +304,7 @@ body{
   font-weight: 800;
   opacity: 0;
   transform: translateY(40px);
-  animation: fadeUp 1.4s ease forwards;
+  animation: fadeUp 1.2s ease forwards;
 }
 
 @keyframes fadeUp {
@@ -318,9 +318,14 @@ body{
   }
 }
 
-/* Movimiento más fluido hacia arriba (sin salto) */
+/* Movimiento más fluido hacia arriba */
+.intro-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .intro-move {
-  animation: moveUpSmooth 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: moveUpSmooth 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes moveUpSmooth {
@@ -328,11 +333,8 @@ body{
     transform: translateY(0);
     font-size: clamp(28px, 5vw, 48px);
   }
-  50% {
-    transform: translateY(-30px);
-  }
   100% {
-    transform: translateY(-80px);
+    transform: translateY(-90px);
     font-size: 26px;
   }
 }
@@ -348,7 +350,7 @@ body{
 
 .rol-card {
   background: var(--white);
-  color: var(--accent); /* Coral para texto interior */
+  color: var(--accent);
   border: 2px solid var(--accent);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
@@ -379,18 +381,17 @@ body{
 /* Info inferior */
 .rol-info {
   margin-top: 70px;
-  font-size: 16.5px;
-  color: var(--muted); /* Color gris suave */
-  font-weight: 500;
+  font-size: 17px;
+  color: var(--muted);
+  font-weight: 600;
   line-height: 1.6;
-  max-width: 700px;
-  margin-inline: auto;
 }
 
 .rol-info strong {
-  color: var(--primary-700);
+  color: #374151; /* gris oscuro más profesional */
+  display: block;
+  margin-bottom: 6px;
   font-weight: 700;
-  display: inline;
 }
 
 /* Animaciones */
@@ -429,4 +430,3 @@ body{
     margin-top: 50px;
   }
 }
-
