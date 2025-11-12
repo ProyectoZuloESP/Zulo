@@ -300,42 +300,26 @@ body{
 #intro-text {
   font-family: "Montserrat", sans-serif;
   font-size: clamp(28px, 5vw, 48px);
-  color: var(--primary-700, #00B8A9); /* color visible por defecto */
+  color: var(--primary-700, #00B8A9); 
   font-weight: 800;
   opacity: 0;
   transform: translateY(40px);
+  transition: transform 1.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              font-size 1.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 1.2s ease;
 }
 
 /* Aparece suavemente al cargar */
 .intro-active {
-  animation: fadeUp 1.2s ease forwards;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Movimiento más fluido hacia arriba */
+/* Movimiento fluido hacia arriba sobre los botones */
 .intro-move {
-  animation: moveUpSmooth 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes moveUpSmooth {
-  0% {
-    transform: translateY(0);
-    font-size: clamp(28px, 5vw, 48px);
-  }
-  100% {
-    transform: translateY(-90px);
-    font-size: 26px;
-  }
+  transform: translateY(-90px);
+  font-size: 26px;
+  opacity: 1; /* Siempre visible */
 }
 
 /* ===== OPCIONES ===== */
@@ -379,7 +363,7 @@ body{
 
 /* ===== INFO INFERIOR ===== */
 .rol-info {
-  margin-top: 50px; /* antes 70px */
+  margin-top: 50px;
   font-size: 17px;
   color: var(--muted, #6b7280);
   font-weight: 600;
@@ -389,7 +373,7 @@ body{
 .rol-info strong {
   color: #374151;
   display: block;
-  margin-bottom: 4px; /* antes 6px, menos espacio */
+  margin-bottom: 2px; /* menos espacio */
   font-weight: 700;
 }
 
@@ -423,3 +407,4 @@ body{
     margin-top: 40px;
   }
 }
+
