@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Roomix — Crear cuenta</title>
 
-  <!-- Enlaza la hoja de estilos -->
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Tipografía -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -35,6 +32,9 @@
     <div class="crear_cuenta-content">
       <h1 id="intro-text">¿Qué quieres hacer en Roomix?</h1>
 
+      <!-- Fondo tipo hero detrás de los botones -->
+      <div class="rol-bg hidden" id="rol-bg"></div>
+
       <div class="rol-options hidden" id="rol-options">
         <div class="rol-card" data-rol="buscador">
           <h2>🔍 Buscar habitaciones</h2>
@@ -44,14 +44,10 @@
           <h2>🏠 Ofrecer habitaciones</h2>
           <p>Publica tus anuncios y conecta con nuevos compañeros.</p>
         </div>
-        <div class="rol-card" data-rol="ambos">
-          <h2>🤝 Ambas cosas</h2>
-          <p>Explora, publica y disfruta de toda la experiencia Roomix.</p>
-        </div>
       </div>
 
       <p class="rol-info hidden" id="rol-info">
-        Esta información se usará para personalizar tu perfil y mejorar tu experiencia.  
+        Esta información se usará para personalizar tu perfil y mejorar tu experiencia.<br>
         Podrás cambiar estas opciones más adelante desde los ajustes de tu cuenta.
       </p>
     </div>
@@ -73,26 +69,33 @@
   </footer>
 
   <script>
-    // Mostrar año actual en footer
+    // Año actual en el footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Animación inicial
+    // Animaciones de entrada
     window.addEventListener('DOMContentLoaded', () => {
       const intro = document.getElementById('intro-text');
       const rolOptions = document.getElementById('rol-options');
       const rolInfo = document.getElementById('rol-info');
+      const rolBg = document.getElementById('rol-bg');
 
-      // Paso 1: animación de entrada
+      // Aparece el texto principal
       intro.classList.add('intro-active');
 
-      // Paso 2: tras unos segundos, sube el texto y muestra las opciones
+      // Después de unos segundos, animar suavemente hacia arriba
       setTimeout(() => {
-        intro.classList.add('intro-small');
+        intro.classList.add('intro-move');
+        rolBg.classList.remove('hidden');
+        rolBg.classList.add('fade-in-bg');
+      }, 2000);
+
+      // Mostrar las opciones con una ligera demora tras el movimiento
+      setTimeout(() => {
         rolOptions.classList.remove('hidden');
         rolOptions.classList.add('fade-in');
         rolInfo.classList.remove('hidden');
         rolInfo.classList.add('fade-in');
-      }, 2000);
+      }, 3200);
     });
   </script>
 </body>
