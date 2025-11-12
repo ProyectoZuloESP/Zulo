@@ -296,7 +296,8 @@ body{
   position: relative;
 }
 
-/* Texto inicial: fade in + desplazamiento suave hacia arriba */
+
+/* */
 #intro-text {
   font-family: "Montserrat", sans-serif;
   font-size: 42px; /* tamaño fijo */
@@ -314,19 +315,19 @@ body{
   }
   30% {
     opacity: 1;
-    transform: translateY(0); /* aparece en el centro */
+    transform: translateY(0); /* aparece centrado */
   }
   70% {
     opacity: 1;
-    transform: translateY(0); /* se queda visible un instante */
+    transform: translateY(0); /* se queda un instante */
   }
   100% {
     opacity: 1;
-    transform: translateY(-100px); /* se mueve arriba de los botones */
+    transform: translateY(-60px); /* se mueve más abajo que antes */
   }
 }
 
-/* Versión móvil: menos desplazamiento final */
+/* Versión móvil */
 @media (max-width: 700px) {
   #intro-text {
     animation: fadeInMoveUpMobile 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -347,11 +348,10 @@ body{
     }
     100% {
       opacity: 1;
-      transform: translateY(-70px);
+      transform: translateY(-45px); /* ajuste más cercano a los botones */
     }
   }
 }
-
 
 
 /* Opciones */
