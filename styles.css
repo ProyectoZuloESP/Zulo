@@ -300,22 +300,22 @@ body{
 #intro-text {
   font-family: "Montserrat", sans-serif;
   font-size: clamp(28px, 5vw, 48px);
-  color: var(--primary-700, #00B8A9); 
+  color: var(--primary-700, #00B8A9);
   font-weight: 800;
   opacity: 0;
   transform: translateY(40px);
-  transition: transform 1.4s cubic-bezier(0.4, 0, 0.2, 1), 
-              font-size 1.4s cubic-bezier(0.4, 0, 0.2, 1), 
+  transition: transform 1.4s cubic-bezier(0.4, 0, 0.2, 1),
+              font-size 1.4s cubic-bezier(0.4, 0, 0.2, 1),
               opacity 1.2s ease;
 }
 
-/* Aparece suavemente al cargar */
+/* Fade-in inicial */
 .intro-active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Movimiento fluido hacia arriba sobre los botones */
+/* Movimiento suave hacia arriba sobre los botones */
 .intro-move {
   transform: translateY(-90px);
   font-size: 26px;
@@ -373,7 +373,7 @@ body{
 .rol-info strong {
   color: #374151;
   display: block;
-  margin-bottom: 2px; /* menos espacio */
+  margin-bottom: 2px; /* menos espacio entre líneas */
   font-weight: 700;
 }
 
@@ -407,4 +407,3 @@ body{
     margin-top: 40px;
   }
 }
-
