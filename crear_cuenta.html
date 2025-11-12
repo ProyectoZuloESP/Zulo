@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Roomix — Crear cuenta</title>
-
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -57,40 +56,34 @@
         Roomix — Conectando personas, creando hogares.
       </p>
       <p class="footer-legal">
-        <a href="terminos.html">Términos y Condiciones</a> |
-        <a href="privacidad.html">Política de Privacidad</a> |
+        <a href="terminos.html">Términos y Condiciones</a> | 
+        <a href="privacidad.html">Política de Privacidad</a> | 
         <a href="cookies.html">Política de Cookies</a><br><br>
         © <span id="year"></span> Todos los derechos reservados.
       </p>
     </div>
   </footer>
 
- <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  
-  window.addEventListener('DOMContentLoaded', () => {
-    const intro = document.getElementById('intro-text');
-    const rolOptions = document.getElementById('rol-options');
-    const rolInfo = document.getElementById('rol-info');
-  
-    // Aparece el texto inicial con fade-in
-    intro.classList.add('intro-active');
-  
-    // Después de 2s, se mueve suavemente hacia arriba usando transition
-    setTimeout(() => {
-      intro.classList.add('intro-move');
-    }, 2000);
-  
-    // Finalmente, aparecen las opciones y la info inferior
-    setTimeout(() => {
-      rolOptions.classList.remove('hidden');
-      rolOptions.classList.add('fade-in');
-      rolInfo.classList.remove('hidden');
-      rolInfo.classList.add('fade-in');
-    }, 3200);
-  });
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const intro = document.getElementById('intro-text');
+      const rolOptions = document.getElementById('rol-options');
+      const rolInfo = document.getElementById('rol-info');
+
+      intro.classList.add('intro-active');
+      setTimeout(() => {
+        intro.classList.add('intro-move');
+      }, 2000);
+
+      setTimeout(() => {
+        rolOptions.classList.remove('hidden');
+        rolOptions.classList.add('fade-in');
+        rolInfo.classList.remove('hidden');
+        rolInfo.classList.add('fade-in');
+      }, 3200);
+    });
   </script>
-
-
 </body>
 </html>
