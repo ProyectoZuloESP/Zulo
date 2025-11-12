@@ -294,7 +294,6 @@ body{
   max-width: 800px;
   width: 100%;
   position: relative;
-  z-index: 2;
 }
 
 /* Texto inicial */
@@ -321,30 +320,7 @@ body{
 
 @keyframes moveUpSmooth {
   0% { transform: translateY(0); font-size: clamp(28px, 5vw, 48px); }
-  100% { transform: translateY(-100px); font-size: 24px; }
-}
-
-/* Fondo tipo hero detrás de las tarjetas */
-.rol-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 120%;
-  height: 380px;
-  background: var(--primary-700);
-  border-radius: 100px / 40px;
-  z-index: -1;
-  opacity: 0;
-}
-
-.fade-in-bg {
-  animation: fadeInBg 1.2s ease forwards;
-}
-
-@keyframes fadeInBg {
-  from { opacity: 0; transform: translate(-50%, -60%); }
-  to { opacity: 1; transform: translate(-50%, -50%); }
+  100% { transform: translateY(-80px); font-size: 26px; }
 }
 
 /* Opciones */
@@ -357,13 +333,14 @@ body{
 }
 
 .rol-card {
-  background: var(--accent);
-  color: var(--white);
+  background: #fff;
+  color: var(--primary-700);
+  border: 2px solid #ff6f61;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
   padding: 30px 24px;
   width: 260px;
-  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+  transition: all 0.25s ease;
   cursor: pointer;
 }
 
@@ -375,23 +352,26 @@ body{
 
 .rol-card p {
   font-size: 14px;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .rol-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 32px rgba(0,0,0,0.1);
-  background: #ff8181; /* tono coral más claro */
+  background: #ff6f61;
+  color: #fff;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
 }
 
 /* Info inferior */
 .rol-info {
-  margin-top: 50px;
-  font-size: 14px;
-  color: var(--muted);
+  margin-top: 60px;
+  font-size: 16px;
+  color: var(--primary-700);
+  font-weight: 500;
   line-height: 1.6;
 }
 
+/* Animaciones */
 .hidden { display: none; }
 
 .fade-in {
@@ -408,12 +388,13 @@ body{
   .rol-card {
     width: 100%;
   }
-  .rol-bg {
-    height: 300px;
-  }
+
   #intro-text.intro-move {
-    transform: translateY(-70px);
-    font-size: 20px;
+    transform: translateY(-60px);
+    font-size: 22px;
+  }
+
+  .rol-info {
+    font-size: 15px;
   }
 }
-
