@@ -283,10 +283,10 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 85vh; /* un poco más alto para centrar mejor el conjunto */
+  min-height: 80vh;
   text-align: center;
   background: var(--neutral-100);
-  padding: 80px 20px 40px; /* espacio arriba para que no choque con el header */
+  padding: 40px 20px;
   overflow: hidden;
 }
 
@@ -296,7 +296,7 @@ body{
   position: relative;
 }
 
-/* ===== Texto de introducción ===== */
+/* Animación del texto */
 #intro-text {
   font-family: "Montserrat", sans-serif;
   font-size: 42px;
@@ -320,22 +320,50 @@ body{
     opacity: 1;
     transform: translateY(0);
   }
-  90% {
+  100% {
     opacity: 1;
-    transform: translateY(-80px);
+    transform: translateY(-180px); /* ✅ no se toca, PC perfecto */
   }
-   100% {
-    opacity: 1;
-    transform: translateY(-120px); /* posición final más baja y centrada */
-   }
 }
 
-/* ===== Opciones de rol ===== */
+/* ✅ Versión móvil corregida */
+@media (max-width: 700px) {
+  .rol-options {
+    margin-top: 28px; /* un poco más de margen para equilibrar */
+  }
+
+  #intro-text {
+    animation: fadeInMoveUpMobile 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    font-size: 30px; /* tamaño más cómodo en móvil */
+    line-height: 1.15;
+  }
+
+  @keyframes fadeInMoveUpMobile {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    30% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    70% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(-10px); /* 🔽 menos distancia, texto más cerca de los botones */
+    }
+  }
+}
+
+/* Opciones */
 .rol-options {
   display: flex;
   justify-content: center;
   gap: 28px;
-  margin-top: 60px; /* reducido para acercar los botones al texto */
+  margin-top: 50px;
   flex-wrap: wrap;
 }
 
@@ -369,9 +397,9 @@ body{
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== Info inferior ===== */
+/* Info inferior */
 .rol-info {
-  margin-top: 60px;
+  margin-top: 70px;
   font-size: 16.5px;
   color: var(--muted);
   font-weight: 500;
@@ -386,7 +414,7 @@ body{
   display: inline;
 }
 
-/* ===== Animaciones auxiliares ===== */
+/* Animaciones */
 .hidden {
   display: none;
 }
@@ -406,38 +434,15 @@ body{
   }
 }
 
-/* ===== Responsive ===== */
+/* Responsive */
 @media (max-width: 700px) {
-  #intro-text {
-    font-size: 28px;
-    animation: fadeInMoveUpMobile 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-
-  @keyframes fadeInMoveUpMobile {
-    0% {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    30% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    70% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    90% {
-      opacity: 1;
-      transform: translateY(-60px); /* versión móvil */
-    }
-     100% {
-      opacity: 1;
-      transform: translateY(-80px); /* versión móvil */
-    }
-  }
-
   .rol-card {
     width: 100%;
+  }
+
+  #intro-text.intro-move {
+    transform: translateY(-40px); /* un poco menos agresivo */
+    font-size: 22px;
   }
 
   .rol-info {
@@ -445,5 +450,3 @@ body{
     margin-top: 50px;
   }
 }
-
-
