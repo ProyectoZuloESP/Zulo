@@ -296,44 +296,52 @@ body{
   position: relative;
 }
 
-/* Texto inicial */
 #intro-text {
   font-family: "Montserrat", sans-serif;
   font-size: clamp(28px, 5vw, 48px);
   color: var(--primary-700);
   font-weight: 800;
   opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 1.4s ease forwards;
+  transform: translateY(60px);
+  animation: fadeUpAndMove 3.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-@keyframes fadeUp {
+@keyframes fadeUpAndMove {
   0% {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(60px);
   }
-  100% {
+  25% {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Movimiento más fluido hacia arriba (sin salto) */
-.intro-move {
-  animation: moveUpSmooth 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes moveUpSmooth {
-  0% {
-    transform: translateY(0);
-    font-size: clamp(28px, 5vw, 48px);
-  }
-  50% {
-    transform: translateY(-30px);
-  }
   100% {
+    opacity: 1;
     transform: translateY(-80px);
     font-size: 26px;
+  }
+}
+
+/* Responsive ajuste */
+@media (max-width: 700px) {
+  #intro-text {
+    animation: fadeUpAndMoveMobile 3.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes fadeUpAndMoveMobile {
+    0% {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    25% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(-60px);
+      font-size: 22px;
+    }
   }
 }
 
