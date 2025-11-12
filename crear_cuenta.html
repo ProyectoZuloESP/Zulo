@@ -32,9 +32,6 @@
     <div class="crear_cuenta-content">
       <h1 id="intro-text">¿Qué quieres hacer en Roomix?</h1>
 
-      <!-- Fondo tipo hero detrás de los botones -->
-      <div class="rol-bg hidden" id="rol-bg"></div>
-
       <div class="rol-options hidden" id="rol-options">
         <div class="rol-card" data-rol="buscador">
           <h2>🔍 Buscar habitaciones</h2>
@@ -47,7 +44,7 @@
       </div>
 
       <p class="rol-info hidden" id="rol-info">
-        Esta información se usará para personalizar tu perfil y mejorar tu experiencia.<br>
+        <strong>Esta información se usará para personalizar tu perfil y mejorar tu experiencia.</strong><br>
         Podrás cambiar estas opciones más adelante desde los ajustes de tu cuenta.
       </p>
     </div>
@@ -69,27 +66,19 @@
   </footer>
 
   <script>
-    // Año actual en el footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Animaciones de entrada
     window.addEventListener('DOMContentLoaded', () => {
       const intro = document.getElementById('intro-text');
       const rolOptions = document.getElementById('rol-options');
       const rolInfo = document.getElementById('rol-info');
-      const rolBg = document.getElementById('rol-bg');
 
-      // Aparece el texto principal
       intro.classList.add('intro-active');
 
-      // Después de unos segundos, animar suavemente hacia arriba
       setTimeout(() => {
         intro.classList.add('intro-move');
-        rolBg.classList.remove('hidden');
-        rolBg.classList.add('fade-in-bg');
       }, 2000);
 
-      // Mostrar las opciones con una ligera demora tras el movimiento
       setTimeout(() => {
         rolOptions.classList.remove('hidden');
         rolOptions.classList.add('fade-in');
