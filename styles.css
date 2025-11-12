@@ -322,7 +322,7 @@ body{
   }
   100% {
     opacity: 1;
-    transform: translateY(-180px); /* posición final en escritorio */
+    transform: translateY(-80px); /* posición final en escritorio */
   }
 }
 
