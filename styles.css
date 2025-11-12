@@ -305,6 +305,8 @@ body{
   opacity: 0;
   transform: translateY(40px);
   animation: fadeInMoveUp 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+   position: relative;          /* ✅ evita que el flujo afecte a los botones */
+  z-index: 2;       
 }
 
 @keyframes fadeInMoveUp {
@@ -440,11 +442,10 @@ body{
     width: 100%;
   }
 
-   /*
   #intro-text.intro-move {
     transform: translateY(-40px);
     font-size: 22px;
-  } */
+  } 
 
   .rol-info {
     font-size: 15px;
