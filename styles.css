@@ -285,7 +285,7 @@ body{
   justify-content: center;
   min-height: 80vh;
   text-align: center;
-  background: var(--neutral-100);
+  background: var(--neutral-100, #f9fafb);
   padding: 40px 20px;
   overflow: hidden;
 }
@@ -300,7 +300,7 @@ body{
 #intro-text {
   font-family: "Montserrat", sans-serif;
   font-size: clamp(28px, 5vw, 48px);
-  color: var(--primary-700);
+  color: var(--primary-700, #00B8A9); /* color visible por defecto */
   font-weight: 800;
   opacity: 0;
   transform: translateY(40px);
@@ -348,11 +348,11 @@ body{
 }
 
 .rol-card {
-  background: var(--white);
-  color: var(--accent);
-  border: 2px solid var(--accent);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow);
+  background: var(--white, #fff);
+  color: var(--accent, #00B8A9);
+  border: 2px solid var(--accent, #00B8A9);
+  border-radius: var(--radius-md, 12px);
+  box-shadow: var(--shadow, 0 4px 12px rgba(0, 0, 0, 0.08));
   padding: 30px 24px;
   width: 260px;
   transition: all 0.25s ease;
@@ -371,25 +371,25 @@ body{
 }
 
 .rol-card:hover {
-  background: var(--accent);
-  color: var(--white);
+  background: var(--accent, #00B8A9);
+  color: var(--white, #fff);
   transform: translateY(-6px);
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
 }
 
 /* ===== INFO INFERIOR ===== */
 .rol-info {
-  margin-top: 70px;
+  margin-top: 50px; /* antes 70px */
   font-size: 17px;
-  color: var(--muted);
+  color: var(--muted, #6b7280);
   font-weight: 600;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .rol-info strong {
   color: #374151;
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 4px; /* antes 6px, menos espacio */
   font-weight: 700;
 }
 
@@ -420,7 +420,6 @@ body{
 
   .rol-info {
     font-size: 15px;
-    margin-top: 50px;
+    margin-top: 40px;
   }
 }
-
