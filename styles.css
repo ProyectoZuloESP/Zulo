@@ -323,14 +323,14 @@ body{
   }
   100% {
     opacity: 1;
-    transform: translateY(-70px); /* antes -60px, ahora más cerca */
+    transform: translateY(-80px); /* antes -60px, ahora más cerca */
   }
 }
 
 /* Versión móvil */
 @media (max-width: 700px) {
   .rol-options {
-    margin-top: 40px; /* antes 80px */
+    margin-top: 30px; /* antes 80px */
   }
 
   #intro-text {
@@ -352,7 +352,7 @@ body{
     }
     100% {
       opacity: 1;
-      transform: translateY(-60px); /* más cercano a los botones */
+      transform: translateY(-20px); /* más cercano a los botones */
     }
   }
 }
@@ -363,7 +363,7 @@ body{
   display: flex;
   justify-content: center;
   gap: 28px;
-  margin-top: 60px;
+  margin-top: 50px;
   flex-wrap: wrap;
 }
 
