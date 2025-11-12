@@ -308,19 +308,30 @@ body{
 }
 
 @keyframes fadeUp {
-  to {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* Movimiento más fluido hacia arriba */
 .intro-move {
-  animation: moveUpSmooth 1.2s ease forwards;
+  animation: moveUpSmooth 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes moveUpSmooth {
-  0% { transform: translateY(0); font-size: clamp(28px, 5vw, 48px); }
-  100% { transform: translateY(-80px); font-size: 26px; }
+  0% {
+    transform: translateY(0);
+    font-size: clamp(28px, 5vw, 48px);
+  }
+  100% {
+    transform: translateY(-80px);
+    font-size: 26px;
+  }
 }
 
 /* Opciones */
@@ -334,7 +345,7 @@ body{
 
 .rol-card {
   background: var(--white);
-  color: var(--primary-700);
+  color: var(--accent); /* Coral para texto interior de los botones */
   border: 2px solid var(--accent);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
@@ -364,23 +375,38 @@ body{
 
 /* Info inferior */
 .rol-info {
-  margin-top: 60px;
-  font-size: 16px;
-  color: var(--primary-700);
-  font-weight: 500;
+  margin-top: 70px;
+  font-size: 17px;
+  color: var(--muted); /* Color menos principal que el turquesa */
+  font-weight: 600;
   line-height: 1.6;
 }
 
+.rol-info strong {
+  color: var(--primary-700);
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
 /* Animaciones */
-.hidden { display: none; }
+.hidden {
+  display: none;
+}
 
 .fade-in {
   animation: fadeIn 0.8s ease forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive */
@@ -396,5 +422,6 @@ body{
 
   .rol-info {
     font-size: 15px;
+    margin-top: 50px;
   }
 }
