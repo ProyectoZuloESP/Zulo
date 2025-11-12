@@ -323,14 +323,14 @@ body{
   }
   100% {
     opacity: 1;
-    transform: translateY(-80px); /* antes -60px, ahora más cerca */
+    transform: translateY(-180px); /* antes -60px, ahora más cerca */
   }
 }
 
 /* Versión móvil */
 @media (max-width: 700px) {
   .rol-options {
-    margin-top: 30px; /* antes 80px */
+    margin-top: 20px; /* antes 80px */
   }
 
   #intro-text {
@@ -352,7 +352,7 @@ body{
     }
     100% {
       opacity: 1;
-      transform: translateY(-20px); /* más cercano a los botones */
+      transform: translateY(-30px); /* más cercano a los botones */
     }
   }
 }
