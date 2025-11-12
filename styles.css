@@ -304,19 +304,38 @@ body{
   font-weight: 800;
   opacity: 0;
   transform: translateY(40px);
-  transition: transform 1.2s ease, opacity 1s ease, font-size 1.2s ease;
 }
 
-/* aparece con fade in */
+/* Aparece suavemente al cargar */
 .intro-active {
-  opacity: 1;
-  transform: translateY(0);
+  animation: fadeUp 1.2s ease forwards;
 }
 
-/* movimiento fluido hacia arriba sin saltos */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Movimiento más fluido hacia arriba */
 .intro-move {
-  transform: translateY(-90px);
-  font-size: 26px;
+  animation: moveUpSmooth 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes moveUpSmooth {
+  0% {
+    transform: translateY(0);
+    font-size: clamp(28px, 5vw, 48px);
+  }
+  100% {
+    transform: translateY(-90px);
+    font-size: 26px;
+  }
 }
 
 /* ===== OPCIONES ===== */
@@ -368,7 +387,7 @@ body{
 }
 
 .rol-info strong {
-  color: #374151; /* gris oscuro más profesional */
+  color: #374151;
   display: block;
   margin-bottom: 6px;
   font-weight: 700;
@@ -404,3 +423,4 @@ body{
     margin-top: 50px;
   }
 }
+
