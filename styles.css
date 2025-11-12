@@ -274,3 +274,120 @@ body{
   .hero-inner{ padding: 0 8px; }
   .cta{ padding: 12px 22px; font-size:15px; }
 }
+
+
+
+/* ======== PÁGINA DE CREAR CUENTA (ELECCIÓN DE ROL) ======== */
+
+.crear_cuenta-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  background: var(--neutral-100);
+  padding: 40px 20px;
+}
+
+.crear_cuenta-content {
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+}
+
+#intro-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(28px, 5vw, 48px);
+  color: var(--primary-700);
+  font-weight: 800;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Transición al fondo */
+.intro-active {
+  opacity: 1;
+}
+
+.intro-small {
+  font-size: 24px;
+  transform: translateY(-80px);
+  transition: all 1s ease;
+}
+
+/* Opciones de rol */
+.rol-options {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+.rol-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  padding: 28px 22px;
+  width: 240px;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s;
+  cursor: pointer;
+}
+
+.rol-card h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: var(--primary-700);
+  margin-bottom: 8px;
+}
+
+.rol-card p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.rol-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(16,24,40,0.1);
+  background: var(--mint);
+}
+
+/* Info inferior */
+.rol-info {
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .rol-card {
+    width: 100%;
+  }
+  .intro-small {
+    font-size: 20px;
+    transform: translateY(-60px);
+  }
+}
