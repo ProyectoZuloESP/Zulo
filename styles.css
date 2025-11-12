@@ -283,10 +283,10 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
+  min-height: 85vh; /* un poco más alto para centrar mejor el conjunto */
   text-align: center;
   background: var(--neutral-100);
-  padding: 40px 20px;
+  padding: 80px 20px 40px; /* espacio arriba para que no choque con el header */
   overflow: hidden;
 }
 
@@ -296,7 +296,7 @@ body{
   position: relative;
 }
 
-/* ===== Animación del texto ===== */
+/* ===== Texto de introducción ===== */
 #intro-text {
   font-family: "Montserrat", sans-serif;
   font-size: 42px;
@@ -320,10 +320,14 @@ body{
     opacity: 1;
     transform: translateY(0);
   }
-  100% {
+  90% {
     opacity: 1;
-    transform: translateY(-80px); /* posición final en escritorio */
+    transform: translateY(-80px);
   }
+   100% {
+    opacity: 1;
+    transform: translateY(-120px); /* posición final más baja y centrada */
+   }
 }
 
 /* ===== Opciones de rol ===== */
@@ -331,7 +335,7 @@ body{
   display: flex;
   justify-content: center;
   gap: 28px;
-  margin-top: 50px;
+  margin-top: 60px; /* reducido para acercar los botones al texto */
   flex-wrap: wrap;
 }
 
@@ -365,9 +369,9 @@ body{
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== Texto informativo inferior ===== */
+/* ===== Info inferior ===== */
 .rol-info {
-  margin-top: 70px;
+  margin-top: 60px;
   font-size: 16.5px;
   color: var(--muted);
   font-weight: 500;
@@ -382,7 +386,7 @@ body{
   display: inline;
 }
 
-/* ===== Animaciones secundarias ===== */
+/* ===== Animaciones auxiliares ===== */
 .hidden {
   display: none;
 }
@@ -404,10 +408,8 @@ body{
 
 /* ===== Responsive ===== */
 @media (max-width: 700px) {
-  /* Ajustes de animación y espaciado en móvil */
   #intro-text {
-    font-size: 30px;
-    line-height: 1.2;
+    font-size: 28px;
     animation: fadeInMoveUpMobile 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
@@ -424,15 +426,14 @@ body{
       opacity: 1;
       transform: translateY(0);
     }
-    100% {
+    90% {
       opacity: 1;
-      transform: translateY(-18px); /* ajustado para que quede más cerca de los botones */
+      transform: translateY(-60px); /* versión móvil */
     }
-  }
-
-  .rol-options {
-    margin-top: 26px; /* antes 50px */
-    gap: 22px;
+     100% {
+      opacity: 1;
+      transform: translateY(-80px); /* versión móvil */
+    }
   }
 
   .rol-card {
@@ -440,9 +441,9 @@ body{
   }
 
   .rol-info {
-    font-size: 14.5px;
-    margin-top: 38px;
-    line-height: 1.5;
+    font-size: 15px;
+    margin-top: 50px;
   }
 }
+
 
