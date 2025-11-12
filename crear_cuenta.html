@@ -73,16 +73,23 @@
     const rolOptions = document.getElementById('rol-options');
     const rolInfo = document.getElementById('rol-info');
 
-    // Animación inicial fluida en una sola transición
-    intro.classList.add('intro-animate');
+    // Aparece el texto inicial con fade-in
+    intro.classList.add('intro-active');
 
+    // Luego se mueve suavemente hacia arriba
+    setTimeout(() => {
+      intro.classList.add('intro-move');
+    }, 2000);
+
+    // Finalmente, aparecen las opciones y el texto informativo
     setTimeout(() => {
       rolOptions.classList.remove('hidden');
       rolOptions.classList.add('fade-in');
       rolInfo.classList.remove('hidden');
       rolInfo.classList.add('fade-in');
-    }, 2500);
+    }, 3200);
   });
 </script>
+
 </body>
 </html>
