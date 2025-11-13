@@ -456,7 +456,7 @@ body{
 /* Separación extra de botones en escritorio */
 @media (min-width: 701px) {
   .crear_cuenta-content {
-    max-width: 1200px; /* más ancho para que el gap funcione */
+    max-width: 120px; /* más ancho para que el gap funcione */
   }
 
   .rol-options {
