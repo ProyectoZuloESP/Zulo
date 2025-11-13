@@ -291,10 +291,11 @@ body{
 }
 
 .crear_cuenta-content {
-  max-width: 800px;
+  max-width: none; /* eliminar límite de 800px */
   width: 100%;
   position: relative;
 }
+
 
 /* Animación del texto */
 #intro-text {
@@ -364,10 +365,11 @@ body{
 .rol-options {
   display: flex;
   justify-content: center;
-  gap: 40px; /* controla la separación exacta */
+  gap: 40px;       /* ahora este valor se refleja exactamente */
   margin-top: 50px;
-  flex-wrap: nowrap; /* evita que se bajen a otra línea */
-  max-width: 100%;
+  flex-wrap: wrap; /* en móvil seguirá apilando si hace falta */
+  width: 100%;     /* usar todo el ancho disponible */
+  max-width: 1000px; /* opcional, para no estirar demasiado en pantallas gigantes */
 }
 
 .rol-card {
