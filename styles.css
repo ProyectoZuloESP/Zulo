@@ -370,7 +370,7 @@ body{
 
 /* Añadimos margen horizontal a las tarjetas */
 .rol-card {
-  margin: 0 20px; /* controla la separación exacta */
+  margin: 0 30px; /* controla la separación exacta */
   background: var(--white);
   color: var(--accent);
   border: 2px solid var(--accent);
