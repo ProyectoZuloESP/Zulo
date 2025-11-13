@@ -364,7 +364,7 @@ body{
 .rol-options {
   display: flex;
   justify-content: center;
-  gap: 28px;
+  gap: 80px;
   margin-top: 50px;
   flex-wrap: wrap;
 }
