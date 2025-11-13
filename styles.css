@@ -364,9 +364,10 @@ body{
 .rol-options {
   display: flex;
   justify-content: center;
-  gap: 28px;
+  gap: 40px; /* controla la separación exacta */
   margin-top: 50px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* evita que se bajen a otra línea */
+  max-width: 100%;
 }
 
 .rol-card {
