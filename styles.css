@@ -1,8 +1,9 @@
 /* styles.css
    Comentarios en español: estilos generales y responsive.
-   Paleta basada en la ayuda de colores que me diste. */
+   Paleta basada en la ayuda de colores que me diste.
+*/
 
-/* Variables de color para mantener coherencia */
+/* ===== VARIABLES DE COLOR ===== */
 :root{
   --primary-700: #00B8A9;    /* turquesa principal */
   --primary-600: #0099FF;    /* azul alternativo (usar con moderación) */
@@ -18,47 +19,47 @@
   --radius-md: 10px;
 }
 
-/* Reset básico y tipografías */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
+/* ===== RESET BÁSICO Y TIPOGRAFÍAS ===== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
   font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color:var(--text);
-  background:var(--white);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  color: var(--text);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Contenedor ancho controlado */
-.container{
+/* ===== CONTENEDOR GENERAL ===== */
+.container {
   width: min(1100px, 92%);
   margin: 0 auto;
 }
 
-/* HEADER / NAVBAR */
-.site-header{
+/* ===== HEADER / NAVBAR ===== */
+.site-header {
   background: var(--white);
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
   z-index: 40;
 }
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 18px 0;
 }
-.logo{
-  display:flex;
-  gap:12px;
-  align-items:center;
+.logo {
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
-.brand{
+.brand {
   font-family: "Montserrat", sans-serif;
-  font-weight:700;
-  color:var(--primary-700);
+  font-weight: 700;
+  color: var(--primary-700);
   text-transform: lowercase;
   letter-spacing: 0.4px;
   font-size: 20px;
@@ -69,127 +70,125 @@ body{
   text-decoration: none;
   color: inherit;
 }
-
-/* Acciones a la derecha (Sign in / Sign up) */
-.nav-actions a{
+/* Acciones a la derecha */
+.nav-actions a {
   margin-left: 18px;
-  text-decoration:none;
-  font-size:15px;
-  color:var(--muted);
+  text-decoration: none;
+  font-size: 15px;
+  color: var(--muted);
 }
-.nav-actions .signup{
-  padding:8px 12px;
+.nav-actions .signup {
+  padding: 8px 12px;
   border-radius: 8px;
   border: 1px solid rgba(0,0,0,0.06);
-  color:var(--text);
+  color: var(--text);
 }
 
-/* HERO: banner grande turquesa */
-.hero{
+/* ===== HERO ===== */
+.hero {
   background: var(--primary-700);
   color: var(--white);
   padding: 72px 0 56px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
-/* inner del hero: separa el contenido y limita ancho */
-.hero-inner{
+.hero-inner {
   width: min(900px, 92%);
 }
-.hero-title{
-  margin:0 0 12px 0;
+.hero-title {
+  margin: 0 0 12px 0;
   font-family: "Montserrat", sans-serif;
-  font-weight:800;
-  font-size: clamp(28px, 5vw, 56px); /* grande y responsive */
+  font-weight: 800;
+  font-size: clamp(28px, 5vw, 56px);
   line-height: 1.02;
   letter-spacing: -0.6px;
 }
-.hero-sub{
-  margin:0 0 28px 0;
-  font-size:18px;
-  font-weight:400;
+.hero-sub {
+  margin: 0 0 28px 0;
+  font-size: 18px;
+  font-weight: 400;
   color: rgba(255,255,255,0.93);
 }
 
-/* CTA boton grande coral */
-.cta{
-  display:inline-block;
+/* ===== CTA ===== */
+.cta {
+  display: inline-block;
   background: var(--accent);
-  color:var(--white);
-  text-decoration:none;
+  color: var(--white);
+  text-decoration: none;
   padding: 14px 34px;
   border-radius: 28px;
-  font-weight:600;
+  font-weight: 600;
   box-shadow: 0 8px 20px rgba(255,107,107,0.12);
   transition: transform .12s ease, box-shadow .12s ease;
 }
-.cta:hover{ transform: translateY(-3px); box-shadow: 0 14px 30px rgba(255,107,107,0.18); }
+.cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(255,107,107,0.18);
+}
 
-/* MAIN CONTENT: listado de cards */
-.main-content{
+/* ===== MAIN CONTENT ===== */
+.main-content {
   padding: 40px 0 80px;
 }
-.listings{
-  display:grid;
+.listings {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
   align-items: start;
 }
 
-/* Card individual */
-.card{
+/* Card */
+.card {
   background: var(--white);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: transform .14s ease, box-shadow .14s ease;
 }
-.card:hover{
+.card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(16,24,40,0.08);
 }
-.card-image{
-  width:100%;
-  aspect-ratio: 16/10; /* mantiene proporción */
-  overflow:hidden;
+.card-image {
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.card-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   border-radius: 12px 12px 0 0;
 }
-
-/* Texto dentro de la card */
-.card-body{
+.card-body {
   padding: 18px 20px 26px;
 }
-.card-title{
-  margin:0 0 8px 0;
+.card-title {
+  margin: 0 0 8px 0;
   font-family: "Montserrat", sans-serif;
-  font-weight:600;
-  font-size:18px;
+  font-weight: 600;
+  font-size: 18px;
 }
-.price{
-  margin:0;
-  font-size:20px;
-  font-weight:700;
-  color:var(--text);
+.price {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 .site-footer {
   border-top: 1px solid #eee;
   padding: 28px 0;
   text-align: center;
   background: var(--white);
 }
-
 .footer-slogan {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -198,25 +197,21 @@ body{
   margin: 0 0 4px 0;
   letter-spacing: 0.2px;
 }
-
 .footer-legal {
   font-size: 13px;
   color: var(--muted);
   margin: 0;
 }
-
 .footer-legal a {
   color: var(--muted);
   text-decoration: none;
   margin: 0 4px;
 }
-
 .footer-legal a:hover {
   color: var(--primary-700);
 }
 
-
-/* ===== Estilos para páginas legales ===== */
+/* ===== PÁGINAS LEGALES ===== */
 .legal {
   max-width: 900px;
   margin: 60px auto;
@@ -224,14 +219,12 @@ body{
   color: #333;
   font-family: 'Open Sans', sans-serif;
 }
-
 .legal h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
   color: #00B8A9;
   margin-bottom: 20px;
 }
-
 .legal h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
@@ -239,46 +232,33 @@ body{
   margin-top: 30px;
   margin-bottom: 10px;
 }
-
-.legal p,
-.legal ul {
+.legal p, .legal ul {
   margin-bottom: 16px;
   font-size: 1rem;
 }
-
-.legal ul {
-  padding-left: 20px;
-}
-
+.legal ul { padding-left: 20px; }
 .legal a {
   color: #00B8A9;
   text-decoration: none;
 }
+.legal a:hover { text-decoration: underline; }
 
-.legal a:hover {
-  text-decoration: underline;
+/* ===== MEDIA QUERIES GENERALES ===== */
+@media (max-width: 900px) {
+  .listings { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .hero { padding: 48px 0; }
+  .hero-title { font-size: clamp(22px, 6vw, 40px); }
 }
 
-
-
-/* Responsive: en pantallas pequeñas poner columnas 1 y ajustar hero */
-@media (max-width: 900px){
-  .listings{ grid-template-columns: repeat(2, 1fr); gap:18px; }
-  .hero{ padding:48px 0; }
-  .hero-title{ font-size: clamp(22px, 6vw, 40px); }
-}
-@media (max-width: 600px){
-  .listings{ grid-template-columns: 1fr; }
-  .nav-actions a{ margin-left: 8px; font-size:14px; }
-  .header-inner{ padding:12px 0; }
-  .hero-inner{ padding: 0 8px; }
-  .cta{ padding: 12px 22px; font-size:15px; }
+@media (max-width: 600px) {
+  .listings { grid-template-columns: 1fr; }
+  .nav-actions a { margin-left: 8px; font-size: 14px; }
+  .header-inner { padding: 12px 0; }
+  .hero-inner { padding: 0 8px; }
+  .cta { padding: 12px 22px; font-size: 15px; }
 }
 
-
-
-/* ======== PÁGINA DE CREAR CUENTA (ELECCIÓN DE ROL) ======== */
-
+/* ===== PÁGINA CREAR CUENTA ===== */
 .crear_cuenta-container {
   display: flex;
   align-items: center;
@@ -289,14 +269,13 @@ body{
   padding: 40px 20px;
   overflow: hidden;
 }
-
 .crear_cuenta-content {
   max-width: 800px;
   width: 100%;
   position: relative;
 }
 
-/* Animación del texto */
+/* Animaciones texto */
 #intro-text {
   font-family: "Montserrat", sans-serif;
   font-size: 42px;
@@ -305,70 +284,24 @@ body{
   opacity: 0;
   transform: translateY(40px);
   animation: fadeInMoveUp 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-   position: relative;          /* ✅ evita que el flujo afecte a los botones */
+  position: relative;
   z-index: 2;       
 }
-
 @keyframes fadeInMoveUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  30% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  70% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(-80px); /* no se toca, PC perfecto */
-  }
+  0% { opacity: 0; transform: translateY(40px); }
+  30% { opacity: 1; transform: translateY(0); }
+  70% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 1; transform: translateY(-80px); }
 }
 
-/* ✅ Versión móvil corregida */
-@media (max-width: 700px) {
-  .rol-options {
-    margin-top: 28px; /* un poco más de margen para equilibrar */
-  }
-
-  #intro-text {
-    animation: fadeInMoveUpMobile 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    font-size: 30px; /* tamaño más cómodo en móvil */
-    line-height: 1.15;
-  }
-
-  @keyframes fadeInMoveUpMobile {
-    0% {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    30% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    70% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-     100% {
-      opacity: 1;
-      transform: translateY(-20px); /* menos distancia, texto más cerca de los botones */
-    }
-  }
-}
-
-/* Opciones */
+/* Opciones de rol */
 .rol-options {
   display: flex;
   justify-content: center;
-  gap: 120px;
+  gap: 120px; /* Desktop default */
   margin-top: 50px;
   flex-wrap: wrap;
 }
-
 .rol-card {
   background: var(--white);
   color: var(--accent);
@@ -380,23 +313,20 @@ body{
   transition: all 0.25s ease;
   cursor: pointer;
 }
-
 .rol-card h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   margin-bottom: 10px;
 }
-
 .rol-card p {
   font-size: 14px;
   opacity: 0.85;
 }
-
 .rol-card:hover {
   background: var(--accent);
   color: var(--white);
   transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.1);
 }
 
 /* Info inferior */
@@ -409,58 +339,39 @@ body{
   max-width: 700px;
   margin-inline: auto;
 }
-
 .rol-info strong {
   color: var(--text) !important;
   font-weight: 700;
   display: inline;
 }
 
-/* Animaciones */
-.hidden {
-  display: none;
-}
-
-.fade-in {
-  animation: fadeIn 0.8s ease forwards;
-}
-
+/* Animaciones generales */
+.hidden { display: none; }
+.fade-in { animation: fadeIn 0.8s ease forwards; }
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive */
+/* ===== MEDIA QUERIES PÁGINA CREAR CUENTA ===== */
 @media (max-width: 700px) {
-  .rol-card {
-    width: 100%;
+  /* Ajuste gap móvil */
+  .rol-options { gap: 28px; margin-top: 28px; }
+  .rol-card { width: 100%; }
+  #intro-text {
+    animation: fadeInMoveUpMobile 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    font-size: 30px;
+    line-height: 1.15;
   }
-
   #intro-text.intro-move {
     transform: translateY(-40px);
     font-size: 22px;
-  } 
-
-  .rol-info {
-    font-size: 15px;
-    margin-top: 50px;
   }
+  .rol-info { font-size: 15px; margin-top: 50px; }
 }
-
-
-/* Móvil */
-@media (max-width: 700px) {
-  .rol-options {
-    gap: 28px; /* override solo en móvil */
-  }
-
-  .rol-card {
-    width: 100%;
-  }
+@keyframes fadeInMoveUpMobile {
+  0% { opacity: 0; transform: translateY(40px); }
+  30% { opacity: 1; transform: translateY(0); }
+  70% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 1; transform: translateY(-20px); }
 }
