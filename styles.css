@@ -452,15 +452,3 @@ body{
     margin-top: 50px;
   }
 }
-
-@media (min-width: 701px) {
-  .rol-options {
-    flex-wrap: wrap;       /* permite que bajen si no hay espacio */
-    justify-content: center;
-    gap: 80px;             /* separación entre tarjetas */
-  }
-
-  .rol-card {
-    width: 260px;
-  }
-}
