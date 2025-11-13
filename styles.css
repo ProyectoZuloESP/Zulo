@@ -364,9 +364,9 @@ body{
 .rol-options {
   display: flex;
   justify-content: space-between; 
-  margin-top: 20px;
+  margin-top: 40px;
   flex-wrap: wrap;
-  max-width: 1000px;  /* mucho más ancho que 2x260px */
+  max-width: 100px;  /* mucho más ancho que 2x260px */
   margin-left: auto;
   margin-right: auto;
 }
