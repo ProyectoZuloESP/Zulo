@@ -455,6 +455,6 @@ body{
 
 @media (min-width: 701px) {
   .rol-options {
-    gap: 120px; /* más separación entre los dos recuadros */
+    gap: 300px; /* más separación entre los dos recuadros */
   }
 }
