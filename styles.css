@@ -457,7 +457,7 @@ body{
   .rol-options {
     flex-wrap: nowrap; /* ✅ No permite que bajen de línea */
     justify-content: center; /* Centra horizontalmente */
-    gap: 120px; /* ✅ Aumenta el espacio lateral */
+    gap: 300px; /* ✅ Aumenta el espacio lateral */
   }
 
   .rol-card {
