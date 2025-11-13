@@ -1,3 +1,4 @@
+
 /* styles.css
    Comentarios en español: estilos generales y responsive.
    Paleta basada en la ayuda de colores que me diste. */
@@ -291,11 +292,10 @@ body{
 }
 
 .crear_cuenta-content {
-  max-width: none; /* eliminar límite de 800px */
+  max-width: 800px;
   width: 100%;
   position: relative;
 }
-
 
 /* Animación del texto */
 #intro-text {
@@ -365,11 +365,9 @@ body{
 .rol-options {
   display: flex;
   justify-content: center;
-  gap: 40px;       /* ahora este valor se refleja exactamente */
+  gap: 28px;
   margin-top: 50px;
-  flex-wrap: wrap; /* en móvil seguirá apilando si hace falta */
-  width: 100%;     /* usar todo el ancho disponible */
-  max-width: 1000px; /* opcional, para no estirar demasiado en pantallas gigantes */
+  flex-wrap: wrap;
 }
 
 .rol-card {
