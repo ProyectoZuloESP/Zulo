@@ -455,15 +455,12 @@ body{
 
 @media (min-width: 701px) {
   .rol-options {
-    display: flex;
-    justify-content: space-evenly; /* ✅ reparte el espacio sobrante */
-    align-items: flex-start;
-    gap: 60px; /* separación adicional */
-    margin-top: 60px; /* un poquito más de aire vertical */
+    flex-wrap: nowrap; /* ✅ No permite que bajen de línea */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 80px; /* ✅ Aumenta el espacio lateral */
   }
 
   .rol-card {
-    width: 260px; /* mantenemos el ancho */
+    width: 260px; /* ✅ Mantiene el ancho fijo en escritorio */
   }
 }
-
