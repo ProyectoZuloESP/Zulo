@@ -453,20 +453,14 @@ body{
   }
 }
 
-/* Separación extra de botones en escritorio */
 @media (min-width: 701px) {
-  .crear_cuenta-content {
-    max-width: 1200px; /* más ancho para que el gap funcione */
-  }
-
   .rol-options {
-    flex-wrap: nowrap; /* evita que bajen de línea */
-    justify-content: center; /* centra horizontalmente */
-    gap: 60px; /* separación horizontal entre tarjetas */
+    flex-wrap: wrap;       /* permite que bajen si no hay espacio */
+    justify-content: center;
+    gap: 80px;             /* separación entre tarjetas */
   }
 
   .rol-card {
-    width: 260px; /* mantenemos el ancho */
+    width: 260px;
   }
 }
-
