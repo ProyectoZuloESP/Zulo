@@ -455,6 +455,10 @@ body{
 
 @media (min-width: 701px) {
   .rol-options {
-    gap: 300px; /* más separación entre los dos recuadros */
+    justify-content: center;
+  }
+
+  .rol-card {
+    margin: 0 60px; /* separación visible entre los dos recuadros */
   }
 }
