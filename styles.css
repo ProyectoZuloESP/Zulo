@@ -363,12 +363,11 @@ body{
 /* Opciones */
 .rol-options {
   display: flex;
-  justify-content: space-between; /* separa los botones a los extremos */
+  justify-content: center; /* centradas */
+  gap: 80px;               /* espacio visible entre tarjetas */
   margin-top: 50px;
   flex-wrap: wrap;
-  max-width: 600px;   /* limita el ancho total */
-  margin-left: auto;
-  margin-right: auto;  /* centra el contenedor en la página */
+  max-width: 100%;         /* quitar límite estricto */
 }
 
 .rol-card {
