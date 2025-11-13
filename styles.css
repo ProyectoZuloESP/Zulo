@@ -364,7 +364,7 @@ body{
 .rol-options {
   display: flex;
   justify-content: center;
-  gap: 28px;
+  gap: 120px;
   margin-top: 50px;
   flex-wrap: wrap;
 }
@@ -450,5 +450,17 @@ body{
   .rol-info {
     font-size: 15px;
     margin-top: 50px;
+  }
+}
+
+
+/* Móvil */
+@media (max-width: 700px) {
+  .rol-options {
+    gap: 28px; /* override solo en móvil */
+  }
+
+  .rol-card {
+    width: 100%;
   }
 }
