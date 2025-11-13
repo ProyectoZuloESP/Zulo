@@ -457,7 +457,7 @@ body{
   .rol-options {
     flex-wrap: wrap;       /* permite que bajen si no hay espacio */
     justify-content: center;
-    gap: 40px;             /* separación entre tarjetas */
+    gap: 60px;             /* separación entre tarjetas */
   }
 
   .rol-card {
