@@ -331,9 +331,14 @@ body{
 /* ✅ Versión móvil corregida */
 @media (max-width: 700px) {
   .rol-options {
-   gap: 28px !important;
-   margin-top: 28px; /* un poco más de margen para equilibrar */
+    column-gap: 28px; /* ahora horizontal pequeño */
+    row-gap: 28px;    /* vertical pequeño */
   }
+
+  .rol-card {
+    width: 100%; /* full width para stacking */
+  }
+}
 
   #intro-text {
     animation: fadeInMoveUpMobile 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -365,9 +370,10 @@ body{
 .rol-options {
   display: flex;
   justify-content: center;
-  gap: 120px;
-  margin-top: 50px;
   flex-wrap: wrap;
+  column-gap: 120px; /* separación horizontal */
+  row-gap: 28px;     /* separación vertical, más pequeña para filas si hacen wrap */
+  margin-top: 50px;
 }
 
 .rol-card {
