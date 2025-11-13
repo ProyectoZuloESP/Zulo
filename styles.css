@@ -462,7 +462,7 @@ body{
   .rol-options {
     flex-wrap: nowrap; /* evita que bajen de línea */
     justify-content: center; /* centra horizontalmente */
-    gap: 300px; /* separación horizontal entre tarjetas */
+    gap: 120px; /* separación horizontal entre tarjetas */
   }
 
   .rol-card {
