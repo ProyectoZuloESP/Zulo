@@ -331,7 +331,8 @@ body{
 /* ✅ Versión móvil corregida */
 @media (max-width: 700px) {
   .rol-options {
-    margin-top: 28px; /* un poco más de margen para equilibrar */
+   gap: 28px;
+   margin-top: 28px; /* un poco más de margen para equilibrar */
   }
 
   #intro-text {
