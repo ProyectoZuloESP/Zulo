@@ -363,16 +363,14 @@ body{
 /* Opciones */
 .rol-options {
   display: flex;
-  justify-content: space-between; 
-  margin-top: 40px;
+  justify-content: center;
   flex-wrap: wrap;
-  max-width: 100px;  /* mucho más ancho que 2x260px */
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 50px;
 }
 
-
+/* Añadimos margen horizontal a las tarjetas */
 .rol-card {
+  margin: 0 40px; /* controla la separación exacta */
   background: var(--white);
   color: var(--accent);
   border: 2px solid var(--accent);
