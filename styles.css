@@ -386,33 +386,40 @@ body {
   border: 2px solid var(--accent); /* borde coral */
   border-radius: 28px;
   overflow: hidden;
-  width: 90%;          /* antes era 100%, ahora un poco más estrecha */
-  max-width: 600px;    /* antes 700px, menos ancho horizontal */
+  width: 90%;
+  max-width: 600px;
   margin: 0 auto;
   background: var(--white);
 }
 
-/* Reducimos padding vertical para barra menos alta */
+/* Reducimos padding vertical para barra más compacta */
 .search-field {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 6px 14px; /* antes 8px 16px, un poco menos alto */
+  padding: 6px 14px; /* altura de barra más pequeña */
   cursor: pointer;
-  border-right: 1px solid var(--accent);
   position: relative;
 }
 
-.search-field:last-child {
-  border-right: none;
+/* Separador vertical entre Provincia y Municipio */
+.search-field:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 10%;         /* no llega al borde superior */
+  bottom: 10%;      /* no llega al borde inferior */
+  width: 1px;
+  background-color: #ccc; /* gris medio claro */
 }
 
+/* Label de cada campo */
 .search-field .label {
   font-size: 10px;
   font-weight: 600;
   color: var(--muted);
   text-transform: uppercase;
-  margin-bottom: 3px; /* un poco menos de separación */
+  margin-bottom: 3px;
 }
 
 /* Inputs con placeholder gris claro */
@@ -425,7 +432,7 @@ body {
   width: 100%;
   background: transparent;
   cursor: pointer;
-  padding: 2px 0; /* menos padding vertical dentro del input */
+  padding: 2px 0; /* menos altura interna */
 }
 
 /* Color placeholder gris claro */
@@ -437,8 +444,8 @@ body {
 /* Botón lupa */
 .search-btn {
   background: transparent;
-  border: none;
-  padding: 0 16px; /* un poco menos ancho horizontalmente */
+  border: none;  /* eliminamos borde de separación */
+  padding: 0 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -455,6 +462,8 @@ body {
   stroke: var(--accent);
   stroke-width: 3; /* línea más gruesa */
 }
+
+
 /* OCULTAR/mostrar segun pantalla */
 .desktop-only { display: flex; }
 .mobile-only { display: none; }
