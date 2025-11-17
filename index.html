@@ -16,7 +16,6 @@
   <!-- NAVBAR -->
   <header class="site-header">
     <div class="container header-inner">
-
       <!-- LOGO -->
       <div class="logo">
         <a href="index.html" class="logo-link">
@@ -45,35 +44,23 @@
         </button>
       </form>
 
-      <!-- BARRA DE BÚSQUEDA MÓVIL (solo icono) -->
-      <button class="mobile-search-btn mobile-only" id="openSearch">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <path d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1 0 4.5 10.5a7.5 7.5 0 0 0 12.15 6.15z"
-                stroke="var(--white)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
+      <!-- ICONO BÚSQUEDA MÓVIL -->
+      <button class="mobile-search-btn mobile-only" id="openSearch">🔍</button>
 
       <!-- ACCIONES -->
       <nav class="nav-actions">
         <a href="#" class="signin">Acceder</a>
         <a href="crear_cuenta.html" class="signup">Crear cuenta</a>
       </nav>
-
     </div>
   </header>
 
   <!-- BARRA DE BÚSQUEDA MÓVIL DESPLEGABLE -->
   <div class="mobile-search-panel mobile-only" id="mobileSearchPanel">
     <div class="mobile-search-box">
-      <form id="mobileSearchForm">
-        <div class="search-field">
-          <input type="text" id="provincia-m" placeholder="Provincia..." />
-        </div>
-        <div class="search-field">
-          <input type="text" id="municipio-m" placeholder="Municipio..." />
-        </div>
-        <button type="submit" id="mobileSearchBtn">Buscar</button>
-      </form>
+      <input type="text" id="provincia-m" placeholder="Provincia...">
+      <input type="text" id="municipio-m" placeholder="Municipio...">
+      <button id="mobileSearchBtn">Buscar</button>
       <span id="closeSearch" class="close-search">✖</span>
     </div>
   </div>
@@ -107,7 +94,7 @@
     </div>
   </footer>
 
-  <!-- SCRIPT PRINCIPAL -->
+  <!-- SCRIPT PRINCIPAL CON SUPABASE Y BÚSQUEDA -->
   <script type="module">
     import { createClient } from 'https://esm.sh/@supabase/supabase-js'
 
@@ -172,8 +159,7 @@
     openSearch.addEventListener('click', () => panel.classList.add('active'))
     closeSearch.addEventListener('click', () => panel.classList.remove('active'))
 
-    document.getElementById('mobileSearchForm').addEventListener('submit', async e => {
-      e.preventDefault()
+    document.getElementById('mobileSearchBtn').addEventListener('click', async () => {
       const prov = document.getElementById('provincia-m').value.trim()
       const muni = document.getElementById('municipio-m').value.trim()
       let query = supabase.from('habitaciones').select('*')
