@@ -379,31 +379,70 @@ body {
 
 
 /* ===== BARRA DE BÚSQUEDA HEADER ===== */
+/* ===== BARRA DE BÚSQUEDA ESTILO AIRBNB ===== */
 .search-bar {
   display: flex;
-  gap: 8px;
   align-items: center;
+  gap: 0;
+  border: 2px solid var(--accent); /* borde coral */
+  border-radius: 28px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  background: var(--white);
 }
-.search-bar input {
-  padding: 6px 12px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 14px;
-  width: 140px;
-}
-.search-bar button {
-  background: var(--accent);
-  border: none;
-  color: var(--white);
-  padding: 6px 12px;
-  border-radius: 8px;
+
+.search-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
   cursor: pointer;
-  font-size: 14px;
-  transition: transform .12s ease, box-shadow .12s ease;
+  border-right: 1px solid var(--accent);
+  position: relative;
 }
-.search-bar button:hover {
+
+.search-field:last-child {
+  border-right: none;
+}
+
+.search-field .label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.search-field input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.search-btn {
+  background: transparent;
+  border: none;
+  padding: 0 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .12s ease;
+}
+
+.search-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(255,107,107,0.15);
+}
+
+.search-btn svg path {
+  stroke: var(--accent); /* icono de lupa color coral */
 }
 
 /* OCULTAR/mostrar segun pantalla */
