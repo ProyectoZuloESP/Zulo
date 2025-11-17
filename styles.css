@@ -407,10 +407,14 @@ body {
   content: "";
   position: absolute;
   right: 0;
-  top: 10%;         /* no llega al borde superior */
-  bottom: 10%;      /* no llega al borde inferior */
+  top: 20%;         /* no llega al borde superior */
+  bottom: 20%;      /* no llega al borde inferior */
   width: 1px;
   background-color: #ccc; /* gris medio claro */
+}
+
+.search-field:last-child {
+  border-right: none;
 }
 
 /* Label de cada campo */
@@ -451,6 +455,7 @@ body {
   align-items: center;
   justify-content: center;
   transition: transform .12s ease;
+   border-left: none; /* elimina cualquier línea que separa el botón del input */
 }
 
 .search-btn:hover {
