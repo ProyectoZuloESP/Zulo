@@ -26,34 +26,31 @@
         </a>
       </div>
 
-      <!-- BARRA DE BÚSQUEDA PC -->
-      <div class="search-bar desktop-only">
+      <!-- BARRA DE BÚSQUEDA ESCRITORIO -->
+      <form id="searchForm" class="search-bar desktop-only">
         <div class="search-field">
           <span class="label">Provincia</span>
-          <input type="text" placeholder="Ej: Madrid" />
+          <input type="text" id="provincia" placeholder="Ej: Madrid" />
         </div>
         <div class="search-field">
           <span class="label">Municipio</span>
-          <input type="text" placeholder="Ej: Madrid" />
+          <input type="text" id="municipio" placeholder="Ej: Madrid" />
         </div>
-        <button class="search-btn">
+        <button type="submit" class="search-btn">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
             <path d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1 0 4.5 10.5a7.5 7.5 0 0 0 12.15 6.15z" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
-      </div>
+      </form>
 
       <!-- ICONO BÚSQUEDA MÓVIL -->
-      <div>
-        <button class="mobile-search-btn mobile-only" id="openSearch">🔍</button>
-      </div>
-      
-      
+      <button class="mobile-search-btn mobile-only" id="openSearch">🔍</button>
+
       <!-- ACCIONES -->
       <nav class="nav-actions">
         <a href="#" class="signin">Acceder</a>
         <a href="crear_cuenta.html" class="signup">Crear cuenta</a>
-        </nav>
+      </nav>
     </div>
   </header>
 
@@ -104,22 +101,31 @@
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'
     const supabase = createClient(supabaseUrl, supabaseKey)
 
+    // Mostrar año en el footer
     document.getElementById('year').textContent = new Date().getFullYear()
 
     // Función para cargar habitaciones
     async function cargarHabitaciones(query = null) {
       const contenedor = document.querySelector('.listings')
-      let { data, error } = await (query || supabase.from('habitaciones').select('*'))
+      let { data, error } = query || await supabase.from('habitaciones').select('*')
 
-      if (error) { contenedor.innerHTML = `<p>Error: ${error.message}</p>`; return }
-      if (!data || data.length === 0) { contenedor.innerHTML = `<p>No hay habitaciones disponibles.</p>`; return }
+      if (error) {
+        contenedor.innerHTML = `<p>Error: ${error.message}</p>`
+        return
+      }
+      if (!data || data.length === 0) {
+        contenedor.innerHTML = `<p>No hay habitaciones disponibles.</p>`
+        return
+      }
 
       contenedor.innerHTML = ''
       data.forEach(h => {
         const card = document.createElement('article')
         card.classList.add('card')
         card.innerHTML = `
-          <div class="card-image"><img src="${h.fotos?.[0] || 'https://via.placeholder.com/400x250?text=Habitación'}" alt="${h.titulo || 'Habitación'}"></div>
+          <div class="card-image">
+            <img src="${h.fotos?.[0] || 'https://via.placeholder.com/400x250?text=Habitación'}" alt="${h.titulo || 'Habitación'}">
+          </div>
           <div class="card-body">
             <h3 class="card-title">${h.titulo || 'Sin título'}</h3>
             <p class="price">${h.precio_mes ? h.precio_mes + ' €/mes' : 'Precio no disponible'}</p>
@@ -133,7 +139,7 @@
     // Carga inicial
     cargarHabitaciones()
 
-    // Búsqueda PC
+    // Búsqueda escritorio
     document.getElementById('searchForm').addEventListener('submit', async e => {
       e.preventDefault()
       let query = supabase.from('habitaciones').select('*')
@@ -144,7 +150,7 @@
       cargarHabitaciones(query)
     })
 
-    // BUSCADOR MÓVIL
+    // Búsqueda móvil
     const openSearch = document.getElementById('openSearch')
     const closeSearch = document.getElementById('closeSearch')
     const panel = document.getElementById('mobileSearchPanel')
