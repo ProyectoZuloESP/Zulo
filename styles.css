@@ -386,8 +386,8 @@ body {
   border: 2px solid var(--accent); /* borde coral */
   border-radius: 28px;
   overflow: hidden;
-  width: 100%;
-  max-width: 700px;
+  width: 90%;          /* antes era 100%, ahora un poco más estrecha */
+  max-width: 600px;    /* antes 700px, menos ancho horizontal */
   margin: 0 auto;
   background: var(--white);
 }
@@ -397,7 +397,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 8px 16px; /* menos altura */
+  padding: 6px 14px; /* antes 8px 16px, un poco menos alto */
   cursor: pointer;
   border-right: 1px solid var(--accent);
   position: relative;
@@ -412,7 +412,7 @@ body {
   font-weight: 600;
   color: var(--muted);
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 3px; /* un poco menos de separación */
 }
 
 /* Inputs con placeholder gris claro */
@@ -425,6 +425,7 @@ body {
   width: 100%;
   background: transparent;
   cursor: pointer;
+  padding: 2px 0; /* menos padding vertical dentro del input */
 }
 
 /* Color placeholder gris claro */
@@ -437,7 +438,7 @@ body {
 .search-btn {
   background: transparent;
   border: none;
-  padding: 0 20px;
+  padding: 0 16px; /* un poco menos ancho horizontalmente */
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -454,7 +455,6 @@ body {
   stroke: var(--accent);
   stroke-width: 3; /* línea más gruesa */
 }
-
 /* OCULTAR/mostrar segun pantalla */
 .desktop-only { display: flex; }
 .mobile-only { display: none; }
