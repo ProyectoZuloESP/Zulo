@@ -27,19 +27,33 @@
       </div>
 
       <!-- BARRA DE BÚSQUEDA PC -->
-      <form class="search-bar desktop-only" id="searchForm">
-        <input type="text" id="provincia" placeholder="Provincia...">
-        <input type="text" id="municipio" placeholder="Municipio...">
-        <button type="submit">🔍</button>
-      </form>
+      <div class="search-bar desktop-only">
+        <div class="search-field">
+          <span class="label">Provincia</span>
+          <input type="text" placeholder="Ej: Madrid" />
+        </div>
+        <div class="search-field">
+          <span class="label">Municipio</span>
+          <input type="text" placeholder="Ej: Madrid" />
+        </div>
+        <button class="search-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1 0 4.5 10.5a7.5 7.5 0 0 0 12.15 6.15z" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
 
+      <!-- ICONO BÚSQUEDA MÓVIL -->
+      <div>
+        <button class="mobile-search-btn mobile-only" id="openSearch">🔍</button>
+      </div>
+      
+      
       <!-- ACCIONES -->
       <nav class="nav-actions">
         <a href="#" class="signin">Acceder</a>
         <a href="crear_cuenta.html" class="signup">Crear cuenta</a>
-        <!-- ICONO BÚSQUEDA MÓVIL -->
-        <button class="mobile-search-btn mobile-only" id="openSearch">🔍</button>
-      </nav>
+        </nav>
     </div>
   </header>
 
