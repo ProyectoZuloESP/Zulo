@@ -388,7 +388,7 @@ body {
   overflow: hidden;
   width: 90%;
   max-width: 600px;
-  margin: 0 auto 40px; /* margen inferior opcional */
+  margin: 0 auto; /* margen inferior opcional */
   background: var(--white);
 }
 
