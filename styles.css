@@ -420,8 +420,9 @@ body {
 
 /* Label de cada campo */
 .search-field .label {
-  font-size: 10px;
-  font-weight: 600;
+   font-family: "Open Sans", sans-serif; /* misma tipografía que los párrafos */
+  font-size: 12px;                     /* un poquito más grande si quieres */
+  font-weight: 500;                    /* mismo peso que el texto */
   color: var(--muted);
   text-transform: uppercase;
   margin-bottom: 3px;
