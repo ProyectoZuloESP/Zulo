@@ -392,11 +392,12 @@ body {
   background: var(--white);
 }
 
+/* Reducimos padding vertical para barra menos alta */
 .search-field {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 12px 16px;
+  padding: 8px 16px; /* menos altura */
   cursor: pointer;
   border-right: 1px solid var(--accent);
   position: relative;
@@ -414,6 +415,7 @@ body {
   margin-bottom: 4px;
 }
 
+/* Inputs con placeholder gris claro */
 .search-field input {
   border: none;
   outline: none;
@@ -425,6 +427,13 @@ body {
   cursor: pointer;
 }
 
+/* Color placeholder gris claro */
+.search-field input::placeholder {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+/* Botón lupa */
 .search-btn {
   background: transparent;
   border: none;
@@ -443,7 +452,7 @@ body {
 /* Icono de lupa más gordito y color coral */
 .search-btn svg path {
   stroke: var(--accent);
-  stroke-width: 3; /* aumenta el grosor de la línea */
+  stroke-width: 3; /* línea más gruesa */
 }
 
 /* OCULTAR/mostrar segun pantalla */
