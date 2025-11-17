@@ -442,7 +442,7 @@ body {
 
 /* Color placeholder gris claro */
 .search-field input::placeholder {
-  color: var(--muted);
+  color: #ccc;  /* mismo gris que la línea de separación */
   font-weight: 400;
 }
 
