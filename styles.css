@@ -388,7 +388,7 @@ body {
   overflow: hidden;
   width: 90%;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 40px; /* margen inferior opcional */
   background: var(--white);
 }
 
@@ -397,13 +397,13 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 6px 14px; /* altura de barra más pequeña */
+  padding: 6px 14px; /* altura más pequeña */
   cursor: pointer;
   position: relative;
 }
 
-/* Separador vertical entre Provincia y Municipio */
-.search-field:not(:last-child)::after {
+/* Separador vertical solo entre Provincia y Municipio */
+.search-field:first-child::after {
   content: "";
   position: absolute;
   right: 0;
@@ -413,6 +413,7 @@ body {
   background-color: #ccc; /* gris medio claro */
 }
 
+/* Asegurar que el último campo no tenga borde adicional */
 .search-field:last-child {
   border-right: none;
 }
@@ -448,14 +449,14 @@ body {
 /* Botón lupa */
 .search-btn {
   background: transparent;
-  border: none;  /* eliminamos borde de separación */
+  border: none;       /* eliminamos borde de separación */
   padding: 0 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform .12s ease;
-   border-left: none; /* elimina cualquier línea que separa el botón del input */
+  border-left: none;  /* elimina cualquier línea que separa el botón del input */
 }
 
 .search-btn:hover {
