@@ -379,7 +379,6 @@ body {
 
 
 /* ===== BARRA DE BÚSQUEDA HEADER ===== */
-/* ===== BARRA DE BÚSQUEDA ESTILO AIRBNB ===== */
 .search-bar {
   display: flex;
   align-items: center;
@@ -441,8 +440,10 @@ body {
   transform: translateY(-2px);
 }
 
+/* Icono de lupa más gordito y color coral */
 .search-btn svg path {
-  stroke: var(--accent); /* icono de lupa color coral */
+  stroke: var(--accent);
+  stroke-width: 3; /* aumenta el grosor de la línea */
 }
 
 /* OCULTAR/mostrar segun pantalla */
