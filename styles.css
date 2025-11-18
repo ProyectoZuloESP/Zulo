@@ -626,8 +626,8 @@ body {
 
   .mobile-search-bar {
     flex: 1 1 auto;
-    max-width: 180px;  /* puedes ajustar si quieres más pequeña */
-    min-width: 60px;
+    max-width: 240px;  /* puedes ajustar si quieres más pequeña */
+    min-width: 40px;
     margin: 0 8px;
   }
 
