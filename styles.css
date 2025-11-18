@@ -258,6 +258,33 @@ body {
   .cta { padding: 12px 22px; font-size: 15px; }
 }
 
+
+/* ===== LOADER ===== */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  color: var(--primary-700);
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid rgba(0, 184, 169, 0.2); /* color turquesa suave */
+  border-top-color: var(--primary-700); /* color principal */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+
 /* ===== PÁGINA CREAR CUENTA ===== */
 .crear_cuenta-container {
   display: flex;
