@@ -114,11 +114,11 @@
   <!-- SCRIPT PRINCIPAL CON SUPABASE Y BÚSQUEDA -->
   <script type="module">
     import { createClient } from 'https://esm.sh/@supabase/supabase-js'
-
+  
     const supabaseUrl = 'https://xxvpfyiateyuniwrtrmm.supabase.co'
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4dnBmeWlhdGV5dW5pd3J0cm1tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNzI4ODYsImV4cCI6MjA3Nzg0ODg4Nn0.xCfhr8vK40SsyNIi6ro1v914x-017y2ZSbBkSqOAiyg'
     const supabase = createClient(supabaseUrl, supabaseKey)
-
+  
     // Mostrar año en el footer
     document.getElementById('year').textContent = new Date().getFullYear()
     
@@ -126,12 +126,12 @@
     
     // Función para cargar habitaciones
     async function cargarHabitaciones(query = null) {
-      // Mostrar spinner + texto
+      // Mostrar spinner + texto de carga
       contenedor.innerHTML = `
         <div class="spinner"></div>
         <p>Cargando habitaciones disponibles...</p>
       `
-    
+  
       let result = query || await supabase.from('habitaciones').select('*')
       let data, error
       if (query) {
@@ -139,17 +139,17 @@
       } else {
         ({ data, error } = result)
       }
-    
+  
       if (error) {
         contenedor.innerHTML = `<p>Error: ${error.message}</p>`
         return
       }
-    
+  
       if (!data || data.length === 0) {
         contenedor.innerHTML = `<p>No hay habitaciones disponibles.</p>`
         return
       }
-    
+  
       // Mostrar habitaciones
       contenedor.innerHTML = ''
       data.forEach(h => {
