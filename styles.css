@@ -484,9 +484,9 @@ body {
   background: var(--white);
 
   width: auto;
-  max-width: 200px;   /* AJUSTABLE */
-  margin-left: 12px;
-  margin-right: 12px;
+  max-width: 180px;   /* AJUSTABLE */
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .mobile-bar-btn {
