@@ -388,7 +388,7 @@ body {
   overflow: hidden;
   width: 90%;
   max-width: 600px;
-  margin: 0 auto; /* margen inferior opcional */
+  margin: 0 auto;
   background: var(--white);
 }
 
@@ -397,38 +397,38 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 6px 14px; /* altura más pequeña */
+  padding: 6px 14px;
   cursor: pointer;
   position: relative;
 }
 
-/* Separador vertical solo entre Provincia y Municipio */
+/* Separador vertical Provincia/Municipio */
 .search-field:first-child::after {
   content: "";
   position: absolute;
   right: 0;
-  top: 20%;         /* no llega al borde superior */
-  bottom: 20%;      /* no llega al borde inferior */
+  top: 20%;
+  bottom: 20%;
   width: 1px;
-  background-color: #ccc; /* gris medio claro */
+  background-color: #ccc;
 }
 
-/* Asegurar que el último campo no tenga borde adicional */
+/* Asegurar que el último campo no tenga borde */
 .search-field:last-child {
   border-right: none;
 }
 
-/* Label de cada campo */
+/* Label */
 .search-field .label {
-   font-family: "Open Sans", sans-serif; /* misma tipografía que los párrafos */
-  font-size: 12px;                     /* un poquito más grande si quieres */
-  font-weight: 700;                    /* mismo peso que el texto */
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
   color: var(--muted);
   text-transform: uppercase;
   margin-bottom: 3px;
 }
 
-/* Inputs con placeholder gris claro */
+/* Inputs */
 .search-field input {
   border: none;
   outline: none;
@@ -438,58 +438,71 @@ body {
   width: 100%;
   background: transparent;
   cursor: pointer;
-  padding: 2px 0; /* menos altura interna */
+  padding: 2px 0;
 }
 
-/* Color placeholder gris claro */
+/* Placeholder gris */
 .search-field input::placeholder {
-  color: #ccc;  /* mismo gris que la línea de separación */
+  color: #ccc;
   font-weight: 400;
 }
 
 /* Botón lupa */
 .search-btn {
   background: transparent;
-  border: none;       /* eliminamos borde de separación */
+  border: none;
   padding: 0 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform .12s ease;
-  border-left: none;  /* elimina cualquier línea que separa el botón del input */
+  border-left: none;
 }
 
 .search-btn:hover {
   transform: translateY(-2px);
 }
 
-/* Icono de lupa más gordito y color coral */
 .search-btn svg path {
   stroke: var(--accent);
-  stroke-width: 3; /* línea más gruesa */
+  stroke-width: 3;
 }
 
-
-/* OCULTAR/mostrar segun pantalla */
+/* Mostrar escritorio por defecto */
 .desktop-only { display: flex; }
 .mobile-only { display: none; }
 
-/* BARRA DE BÚSQUEDA MÓVIL: icono solo */
-.mobile-search-btn {
-  background: var(--accent);  /* fondo coral */
-  border: none;
-  border-radius: 28px;
-  width: 48px;
-  height: 48px;
+/* ===== BARRA MÓVIL con icono coral ===== */
+.mobile-search-bar {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  color: var(--white);
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 8px 0;
+  border: 2px solid var(--accent);
+  border-radius: 28px;
+  background: var(--white);
 }
 
-/* Ventana central móvil */
+.mobile-bar-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-bar-btn svg path {
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+
+/* ===== PANEL EMERGENTE BÚSQUEDA MÓVIL ===== */
 .mobile-search-panel {
   position: fixed;
   top: 0;
@@ -524,11 +537,9 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* Campos de búsqueda dentro de la ventana */
+/* Campos dentro del panel móvil */
 .mobile-search-box .search-field {
   flex: 1;
-  display: flex;
-  flex-direction: column;
 }
 
 .mobile-search-box .search-field input {
@@ -542,13 +553,12 @@ body {
   background: var(--white);
 }
 
-/* Placeholder gris medio claro igual que separación PC */
 .mobile-search-box .search-field input::placeholder {
   color: #ccc;
   font-weight: 400;
 }
 
-/* Botón buscar en ventana móvil */
+/* Botón buscar */
 .mobile-search-box button {
   background: var(--accent);
   border: none;
@@ -566,7 +576,7 @@ body {
   box-shadow: 0 6px 14px rgba(255,107,107,0.15);
 }
 
-/* Cerrar ventana móvil */
+/* Cerrar */
 .mobile-search-box .close-search {
   position: absolute;
   top: 12px;
@@ -576,27 +586,22 @@ body {
   color: var(--muted);
 }
 
+/* ===== RESPONSIVE ===== */
+
+/* Escritorio */
 @media (min-width: 769px) {
-  .desktop-only {
-    display: flex !important;
-  }
-  .mobile-only {
-    display: none !important;
-  }
+  .desktop-only { display: flex !important; }
+  .mobile-only { display: none !important; }
 }
 
-/* --- Móvil (hasta 768px) --- */
+/* Móvil */
 @media (max-width: 768px) {
-  .desktop-only {
-    display: none !important;
-  }
-  .mobile-only {
-    display: flex !important;
-  }
+  .desktop-only { display: none !important; }
+  .mobile-only { display: flex !important; }
 
-  /* IMPORTANTE: el header de móvil se comprime, por lo que
-     hay que evitar que la barra de escritorio ocupe espacio */
-  .search-bar {
+  /* Ocultar barra de escritorio */
+  .search-bar.desktop-only {
     display: none !important;
   }
 }
+
