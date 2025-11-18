@@ -616,32 +616,29 @@ body {
   .header-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* logo a la izquierda, botones a la derecha */
-    gap: 8px; /* pequeño espacio entre logo, barra y botones */
+    justify-content: space-between;
+    gap: 8px; /* espacio pequeño entre logo, barra y botones */
   }
 
-  /* Logo siempre fijo a la izquierda */
   .logo {
     flex: 0 0 auto;
   }
 
-  /* Barra de búsqueda adaptativa: ocupa el espacio restante */
   .mobile-search-bar {
-    flex: 1 1 auto;       /* crece y se encoge según espacio disponible */
-    max-width: 140px;     /* ancho máximo por defecto */
-    min-width: 80px;      /* no demasiado pequeña */
-    margin: 0 8px;        /* margen entre logo y barra / barra y botones */
+    flex: 1 1 auto;
+    max-width: 180px;  /* puedes ajustar si quieres más pequeña */
+    min-width: 60px;
+    margin: 0 8px;
   }
 
-  /* Botones de acciones siempre fijos a la derecha */
   .nav-actions {
-    flex: 0 0 auto;       /* no se encogen ni se mueven */
+    flex: 0 0 auto;
     display: flex;
-    gap: 8px;
+    align-items: center; /* alinea verticalmente los botones */
+    gap: 8px;           /* espacio entre los botones */
   }
 
-  /* Ajuste del tamaño de los botones si quieres */
   .nav-actions a {
-    white-space: nowrap; /* evita que se partan en varias líneas */
+    white-space: nowrap; /* evita que el texto se divida */
   }
 }
