@@ -642,3 +642,20 @@ body {
     white-space: nowrap; /* evita que el texto se divida */
   }
 }
+
+/* Ajuste intermedio: escritorio pequeño */
+@media (min-width: 769px) and (max-width: 900px) {
+  .search-bar.desktop-only {
+    width: 70%;      /* un poco más pequeña que 90% */
+    max-width: 450px; /* limitar el máximo */
+    margin: 0 10px;  /* un poco de margen lateral */
+  }
+
+  .header-inner {
+    gap: 12px; /* espacio entre logo, barra y botones */
+  }
+
+  .nav-actions a {
+    font-size: 14px; /* ajustar ligeramente si hace falta */
+  }
+}
