@@ -575,3 +575,28 @@ body {
   cursor: pointer;
   color: var(--muted);
 }
+
+@media (min-width: 769px) {
+  .desktop-only {
+    display: flex !important;
+  }
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+/* --- Móvil (hasta 768px) --- */
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: flex !important;
+  }
+
+  /* IMPORTANTE: el header de móvil se comprime, por lo que
+     hay que evitar que la barra de escritorio ocupe espacio */
+  .search-bar {
+    display: none !important;
+  }
+}
