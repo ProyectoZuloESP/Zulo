@@ -283,6 +283,41 @@ body {
   to { transform: rotate(360deg); }
 }
 
+/* ===== SPINNER Y MENSAJES CENTRADOS ===== */
+.listings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px; /* altura mínima para centrar en la sección */
+  gap: 12px;
+  text-align: center;
+}
+
+/* Spinner principal */
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid rgba(0, 184, 169, 0.2);
+  border-top-color: var(--primary-700);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Keyframes de rotación */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Texto de carga / no hay habitaciones */
+.listings p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  color: #333; /* gris oscuro */
+  margin: 0;
+  font-weight: 500;
+}
+
 
 
 /* ===== PÁGINA CREAR CUENTA ===== */
