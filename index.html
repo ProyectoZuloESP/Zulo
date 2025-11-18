@@ -121,13 +121,17 @@
 
     // Mostrar año en el footer
     document.getElementById('year').textContent = new Date().getFullYear()
-
-    const spinner = document.getElementById('loadingSpinner')
-
+    
+    const contenedor = document.querySelector('.listings')
+    
     // Función para cargar habitaciones
     async function cargarHabitaciones(query = null) {
-      spinner.style.display = 'block' // mostrar spinner
-      const contenedor = document.querySelector('.listings')
+      // Mostrar spinner + texto
+      contenedor.innerHTML = `
+        <div class="spinner"></div>
+        <p>Cargando habitaciones disponibles...</p>
+      `
+    
       let result = query || await supabase.from('habitaciones').select('*')
       let data, error
       if (query) {
@@ -135,18 +139,18 @@
       } else {
         ({ data, error } = result)
       }
-
-      spinner.style.display = 'none' // ocultar spinner
-
+    
       if (error) {
         contenedor.innerHTML = `<p>Error: ${error.message}</p>`
         return
       }
+    
       if (!data || data.length === 0) {
         contenedor.innerHTML = `<p>No hay habitaciones disponibles.</p>`
         return
       }
-
+    
+      // Mostrar habitaciones
       contenedor.innerHTML = ''
       data.forEach(h => {
         const card = document.createElement('article')
@@ -164,10 +168,10 @@
         contenedor.appendChild(card)
       })
     }
-
+    
     // Carga inicial
     cargarHabitaciones()
-
+    
     // Búsqueda escritorio
     document.getElementById('searchForm').addEventListener('submit', async e => {
       e.preventDefault()
@@ -178,15 +182,15 @@
       if (muni) query = query.ilike('zona', `%${muni}%`)
       cargarHabitaciones(query)
     })
-
+    
     // Búsqueda móvil
     const openSearch = document.getElementById('openSearch')
     const closeSearch = document.getElementById('closeSearch')
     const panel = document.getElementById('mobileSearchPanel')
-
+    
     openSearch.addEventListener('click', () => panel.classList.add('active'))
     closeSearch.addEventListener('click', () => panel.classList.remove('active'))
-
+    
     document.getElementById('mobileSearchBtn').addEventListener('click', async (e) => {
       e.preventDefault()
       const prov = document.getElementById('provincia-m').value.trim()
