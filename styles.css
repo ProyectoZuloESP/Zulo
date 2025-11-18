@@ -314,24 +314,25 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 16.5px;
   color: var(--muted);
-  font-weight: 700; /* si quieres que esté en negrita */
+  font-weight: 700;
   line-height: 1.6;
   text-align: center;
-  margin: 0 0 12px; /* espacio debajo para la línea */
+  margin: 0 0 12px;
   max-width: 700px;
-  position: relative; /* necesario para el pseudo-elemento */
-  display: inline-block; /* para que la línea se ajuste al ancho del texto */
+  position: relative;
+  display: inline-block;
 }
 
 /* Pseudo-elemento para la línea debajo del texto */
 .listings p::after {
   content: '';
   display: block;
-  width: 100%; /* igual que el texto */
-  height: 3px; /* grosor de la línea */
-  background-color: var(--accent); /* color coral, o usa var(--muted) para gris */
-  margin: 8px auto 0; /* separación de la línea respecto al texto */
-  border-radius: 2px; /* bordes redondeados opcionales */
+  width: 110%;          /* 10% más ancho que el texto */
+  max-width: none;      /* para que no se limite al max-width del p */
+  height: 3px;
+  background-color: var(--accent); /* o var(--muted) para gris */
+  margin: 10px auto 0;    /* separación y centrado */
+  border-radius: 2px;
 }
 
 
