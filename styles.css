@@ -479,9 +479,9 @@ body {
   align-items: center;
   justify-content: center;
 
-  width: 60%;          /* ocupa el 60% del ancho disponible */
-  max-width: 220px;    /* no crece demasiado en móviles grandes */
-  min-width: 140px;    /* no se achica demasiado en móviles muy pequeños */
+  width: 50%;          /* ocupa el 60% del ancho disponible */
+  max-width: 160px;    /* no crece demasiado en móviles grandes */
+  min-width: 100px;    /* no se achica demasiado en móviles muy pequeños */
 
   padding: 8px 0;
   border: 2px solid var(--accent);
