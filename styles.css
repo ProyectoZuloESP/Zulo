@@ -479,17 +479,17 @@ body {
   align-items: center;
   justify-content: center;
 
-  /* Ocupa casi todo el ancho, pero deja margen a los lados */
-  width: calc(100% - 24px); /* 12px de margen a cada lado */
-  max-width: 320px;         /* no demasiado grande en móviles grandes */
+  width: 60%;          /* ocupa el 60% del ancho disponible */
+  max-width: 220px;    /* no crece demasiado en móviles grandes */
+  min-width: 140px;    /* no se achica demasiado en móviles muy pequeños */
 
   padding: 8px 0;
   border: 2px solid var(--accent);
   border-radius: 28px;
   background: var(--white);
 
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .mobile-bar-btn {
