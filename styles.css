@@ -610,3 +610,20 @@ body {
   }
 }
 
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-search-bar {
+  flex-grow: 1;      /* crece para ocupar espacio disponible */
+  flex-shrink: 1;    /* se encoge si hace falta */
+  max-width: 160px;  /* nunca más de 160px */
+  margin: 0 10px;    /* respiro lateral */
+}
+
+.nav-actions a {
+  flex-shrink: 0;    /* no se encogen ni se empujan */
+  margin-left: 8px;  /* separación entre botones */
+}
