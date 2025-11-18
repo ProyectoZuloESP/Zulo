@@ -484,7 +484,7 @@ body {
   background: var(--white);
 
   width: auto;
-  max-width: 160px;   /* AJUSTABLE */
+  max-width: 200px;   /* AJUSTABLE */
   margin-left: 12px;
   margin-right: 12px;
 }
