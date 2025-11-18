@@ -312,10 +312,13 @@ body {
 /* Texto de carga / no hay habitaciones */
 .listings p {
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  color: #333; /* gris oscuro */
-  margin: 0;
+  font-size: 16.5px;
+  color: var(--muted);
   font-weight: 500;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+  max-width: 700px; /* igual que rol-info */
 }
 
 
