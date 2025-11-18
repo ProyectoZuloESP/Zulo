@@ -318,23 +318,21 @@ body {
   line-height: 1.6;
   text-align: center;
   margin: 0 0 12px;
-  max-width: 700px;
-  position: relative;
-  display: inline-block;
+  position: relative; 
+  display: inline-block; /* necesario para que la línea siga al texto */
 }
 
 /* Pseudo-elemento para la línea debajo del texto */
 .listings p::after {
   content: '';
   display: block;
-  width: 110%;          /* 10% más ancho que el texto */
-  max-width: none;      /* para que no se limite al max-width del p */
+  width: 120%;           /* línea más larga que el texto */
   height: 3px;
   background-color: var(--accent); /* o var(--muted) para gris */
-  margin: 10px auto 0;    /* separación y centrado */
+  margin: 8px auto 0;    /* centrado y separación */
+  transform: translateX(-10%); /* mueve la línea hacia la izquierda para centrarla */
   border-radius: 2px;
 }
-
 
 
 /* ===== PÁGINA CREAR CUENTA ===== */
