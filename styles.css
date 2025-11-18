@@ -478,13 +478,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60%;
-  max-width: 400px;
-  margin: 0 auto;
   padding: 8px 0;
   border: 2px solid var(--accent);
   border-radius: 28px;
   background: var(--white);
+
+  width: auto;
+  max-width: 160px;   /* AJUSTABLE */
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
 .mobile-bar-btn {
