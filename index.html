@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="es">
 <head>
@@ -11,6 +10,24 @@
 
   <!-- Tipografía: Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Spinner estilo Roomix */
+    .spinner {
+      border: 4px solid rgba(0,0,0,0.1);
+      border-top: 4px solid var(--primary-700);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 50px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
 
@@ -45,7 +62,7 @@
         </button>
       </form>
       
-      <!-- BARRA DE BÚSQUEDA MÓVIL (solo icono, estilo PC) -->
+      <!-- BARRA DE BÚSQUEDA MÓVIL -->
       <form class="mobile-search-bar mobile-only" id="openSearch">
         <button type="button" class="mobile-bar-btn">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
@@ -80,7 +97,6 @@
     </div>
   </header>
 
-
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-inner">
@@ -93,7 +109,8 @@
   <!-- CARDS / LISTADO -->
   <main class="container main-content">
     <section class="listings">
-      <p id="loading">Cargando habitaciones disponibles...</p>
+      <!-- Spinner de carga -->
+      <div class="spinner" id="loadingSpinner"></div>
     </section>
   </main>
 
@@ -121,10 +138,21 @@
     // Mostrar año en el footer
     document.getElementById('year').textContent = new Date().getFullYear()
 
+    const spinner = document.getElementById('loadingSpinner')
+
     // Función para cargar habitaciones
     async function cargarHabitaciones(query = null) {
+      spinner.style.display = 'block' // mostrar spinner
       const contenedor = document.querySelector('.listings')
-      let { data, error } = query || await supabase.from('habitaciones').select('*')
+      let result = query || await supabase.from('habitaciones').select('*')
+      let data, error
+      if (query) {
+        ({ data, error } = await query)
+      } else {
+        ({ data, error } = result)
+      }
+
+      spinner.style.display = 'none' // ocultar spinner
 
       if (error) {
         contenedor.innerHTML = `<p>Error: ${error.message}</p>`
@@ -175,7 +203,8 @@
     openSearch.addEventListener('click', () => panel.classList.add('active'))
     closeSearch.addEventListener('click', () => panel.classList.remove('active'))
 
-    document.getElementById('mobileSearchBtn').addEventListener('click', async () => {
+    document.getElementById('mobileSearchBtn').addEventListener('click', async (e) => {
+      e.preventDefault()
       const prov = document.getElementById('provincia-m').value.trim()
       const muni = document.getElementById('municipio-m').value.trim()
       let query = supabase.from('habitaciones').select('*')
