@@ -610,20 +610,38 @@ body {
   }
 }
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
-.mobile-search-bar {
-  flex-grow: 1;      /* crece para ocupar espacio disponible */
-  flex-shrink: 1;    /* se encoge si hace falta */
-  max-width: 160px;  /* nunca más de 160px */
-  margin: 0 10px;    /* respiro lateral */
-}
+/* ===== HEADER MÓVIL ADAPTATIVO ===== */
+@media (max-width: 768px) {
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logo a la izquierda, botones a la derecha */
+    gap: 8px; /* pequeño espacio entre logo, barra y botones */
+  }
 
-.nav-actions a {
-  flex-shrink: 0;    /* no se encogen ni se empujan */
-  margin-left: 8px;  /* separación entre botones */
+  /* Logo siempre fijo a la izquierda */
+  .logo {
+    flex: 0 0 auto;
+  }
+
+  /* Barra de búsqueda adaptativa: ocupa el espacio restante */
+  .mobile-search-bar {
+    flex: 1 1 auto;       /* crece y se encoge según espacio disponible */
+    max-width: 140px;     /* ancho máximo por defecto */
+    min-width: 80px;      /* no demasiado pequeña */
+    margin: 0 8px;        /* margen entre logo y barra / barra y botones */
+  }
+
+  /* Botones de acciones siempre fijos a la derecha */
+  .nav-actions {
+    flex: 0 0 auto;       /* no se encogen ni se mueven */
+    display: flex;
+    gap: 8px;
+  }
+
+  /* Ajuste del tamaño de los botones si quieres */
+  .nav-actions a {
+    white-space: nowrap; /* evita que se partan en varias líneas */
+  }
 }
