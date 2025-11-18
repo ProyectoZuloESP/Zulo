@@ -318,19 +318,19 @@ body {
   line-height: 1.6;
   text-align: center;
   margin: 0 0 12px;
-  position: relative; 
-  display: inline-block; /* necesario para que la línea siga al texto */
+  display: inline-block;
+  position: relative;
 }
 
-/* Pseudo-elemento para la línea debajo del texto */
-.listings p::after {
+/* Línea solo para el mensaje de "No hay habitaciones disponibles" */
+.listings p.no-results::after {
   content: '';
   display: block;
-  width: 120%;           /* línea más larga que el texto */
+  width: 120%;           /* línea ligeramente más larga */
   height: 3px;
-  background-color: var(--accent); /* o var(--muted) para gris */
-  margin: 8px auto 0;    /* centrado y separación */
-  transform: translateX(-10%); /* mueve la línea hacia la izquierda para centrarla */
+  background-color: var(--accent); /* coral, o var(--muted) si quieres gris */
+  margin: 8px auto 0;
+  transform: translateX(-10%); /* centrar correctamente */
   border-radius: 2px;
 }
 
