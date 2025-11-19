@@ -334,35 +334,32 @@ body {
   border-radius: 2px;
 }
 
-/* ==== HERO: ondas animadas ==== */
-.hero {
+/* ==== HERO – TRIÁNGULOS ANIMADOS PROFESIONALES ==== */
+.hero.triangles-bg {
   position: relative;
   overflow: hidden;
 }
 
-.hero::before {
+/* Capa animada */
+.hero.triangles-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(255,255,255,0.10) 0%,
-    rgba(255,255,255,0.05) 50%,
-    rgba(255,255,255,0.10) 100%
-  );
-  background-size: 200% 200%;
-  animation: waves 12s ease-in-out infinite alternate;
-  z-index: 1;
+  background-image: 
+      radial-gradient(transparent 65%, rgba(255,255,255,0.25) 66%),
+      linear-gradient(60deg, rgba(255,255,255,0.08) 25%, transparent 25%);
+  background-size: 
+      20px 20px,
+      18px 18px;
+  opacity: 0.35;
+  animation: moveTriangles 18s linear infinite;
+  pointer-events: none;
 }
 
-@keyframes waves {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-20%); }
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 2;
+/* Animación continua, jamás se corta */
+@keyframes moveTriangles {
+  0% { background-position: 0px 0px, 0px 0px; }
+  100% { background-position: 600px 600px, -600px -600px; }
 }
 
 
