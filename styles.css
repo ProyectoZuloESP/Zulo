@@ -334,6 +334,36 @@ body {
   border-radius: 2px;
 }
 
+/* ==== HERO: Fondo animado de triángulos ==== */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    url('data:image/svg+xml;utf8,<svg width="120" height="120" xmlns="http://www.w3.org/2000/svg"><polygon points="60,10 110,110 10,110" fill="rgba(255,255,255,0.08)" /></svg>')
+    repeat;
+  background-size: 160px;
+  animation: moveTriangles 18s linear infinite;
+  z-index: 1;
+}
+
+@keyframes moveTriangles {
+  from { transform: translate(0,0); }
+  to { transform: translate(-200px, -200px); }
+}
+
+/* Mantener el contenido por encima */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+
 
 /* ===== PÁGINA CREAR CUENTA ===== */
 .crear_cuenta-container {
