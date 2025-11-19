@@ -334,7 +334,7 @@ body {
   border-radius: 2px;
 }
 
-/* ==== HERO: Fondo animado de triángulos ==== */
+/* ==== HERO: ondas animadas ==== */
 .hero {
   position: relative;
   overflow: hidden;
@@ -344,20 +344,22 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    url('data:image/svg+xml;utf8,<svg width="120" height="120" xmlns="http://www.w3.org/2000/svg"><polygon points="60,10 110,110 10,110" fill="rgba(255,255,255,0.08)" /></svg>')
-    repeat;
-  background-size: 160px;
-  animation: moveTriangles 18s linear infinite;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.10) 0%,
+    rgba(255,255,255,0.05) 50%,
+    rgba(255,255,255,0.10) 100%
+  );
+  background-size: 200% 200%;
+  animation: waves 12s ease-in-out infinite alternate;
   z-index: 1;
 }
 
-@keyframes moveTriangles {
-  from { transform: translate(0,0); }
-  to { transform: translate(-200px, -200px); }
+@keyframes waves {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-20%); }
 }
 
-/* Mantener el contenido por encima */
 .hero-inner {
   position: relative;
   z-index: 2;
