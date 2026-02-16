@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login / Registro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            width: 420px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .tabs button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            background: #eee;
+            font-weight: bold;
+        }
+
+        .tabs button.active {
+            background: #2a5298;
+            color: #fff;
+        }
+
+        form {
+            display: none;
+        }
+
+        form.active {
+            display: block;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button.submit-btn {
+            width: 100%;
+            padding: 10px;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button.submit-btn:hover {
+            background: #16315d;
+        }
+
+        .small-text {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Acceso Usuario</h2>
+
+    <div class="tabs">
+        <button id="loginTab" class="active" onclick="showLogin()">Iniciar Sesión</button>
+        <button id="registerTab" onclick="showRegister()">Crear Cuenta</button>
+    </div>
+
+    <!-- LOGIN -->
+    <form id="loginForm" class="active" action="/login" method="POST">
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <button type="submit" class="submit-btn">Entrar</button>
+    </form>
+
+    <!-- REGISTRO -->
+    <form id="registerForm" action="/register" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="text" name="apellidos" placeholder="Apellidos" required>
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <input type="text" name="telefono" placeholder="Teléfono (opcional)">
+        <input type="password" name="password" placeholder="Contraseña" required minlength="8">
+
+        <select name="rol" required>
+            <option value="">Selecciona rol</option>
+            <option value="buscador">Buscador</option>
+            <option value="propietario">Propietario</option>
+        </select>
+
+        <button type="submit" class="submit-btn">Crear Cuenta</button>
+    </form>
+
+    <div class="small-text">
+        © 2026 - Sistema de Usuarios
+    </div>
+</div>
+
+<script>
+    function showLogin() {
+        document.getElementById("loginForm").classList.add("active");
+        document.getElementById("registerForm").classList.remove("active");
+        document.getElementById("loginTab").classList.add("active");
+        document.getElementById("registerTab").classList.remove("active");
+    }
+
+    function showRegister() {
+        document.getElementById("registerForm").classList.add("active");
+        document.getElementById("loginForm").classList.remove("active");
+        document.getElementById("registerTab").classList.add("active");
+        document.getElementById("loginTab").classList.remove("active");
+    }
+</script>
+
+</body>
+</html>
