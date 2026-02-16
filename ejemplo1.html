@@ -1,145 +1,214 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Login / Registro</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+  <meta charset="UTF-8">
+  <title>Acceso | TuWeb</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .container {
-            background: #fff;
-            width: 420px;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
+  <!-- Google Fonts coherentes con tu CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+  <!-- Tu CSS principal -->
+  <link rel="stylesheet" href="styles.css">
 
-        .tabs {
-            display: flex;
-            margin-bottom: 20px;
-        }
+  <style>
+    /* ===== SECCIÓN LOGIN INTEGRADA ===== */
 
-        .tabs button {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            background: #eee;
-            font-weight: bold;
-        }
+    .auth-section {
+      background: var(--neutral-100);
+      padding: 80px 0;
+    }
 
-        .tabs button.active {
-            background: #2a5298;
-            color: #fff;
-        }
+    .auth-wrapper {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
 
-        form {
-            display: none;
-        }
+    .auth-title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      margin-bottom: 24px;
+      text-align: center;
+      color: var(--primary-700);
+    }
 
-        form.active {
-            display: block;
-        }
+    .auth-tabs {
+      display: flex;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #eee;
+    }
 
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 12px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
+    .auth-tabs button {
+      flex: 1;
+      background: none;
+      border: none;
+      padding: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--muted);
+      font-family: "Open Sans", sans-serif;
+      transition: all .2s ease;
+    }
 
-        button.submit-btn {
-            width: 100%;
-            padding: 10px;
-            background: #1e3c72;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+    .auth-tabs button.active {
+      color: var(--primary-700);
+      border-bottom: 3px solid var(--accent);
+    }
 
-        button.submit-btn:hover {
-            background: #16315d;
-        }
+    .auth-form {
+      display: none;
+      flex-direction: column;
+      gap: 14px;
+    }
 
-        .small-text {
-            font-size: 12px;
-            text-align: center;
-            margin-top: 10px;
-        }
-    </style>
+    .auth-form.active {
+      display: flex;
+    }
+
+    .auth-form input,
+    .auth-form select {
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+      font-family: "Open Sans", sans-serif;
+      transition: border .2s ease, box-shadow .2s ease;
+    }
+
+    .auth-form input:focus,
+    .auth-form select:focus {
+      outline: none;
+      border-color: var(--primary-700);
+      box-shadow: 0 0 0 3px rgba(0,184,169,0.15);
+    }
+
+    .auth-btn {
+      margin-top: 10px;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      padding: 14px;
+      border-radius: 28px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+
+    .auth-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255,107,107,0.2);
+    }
+
+    .auth-footer-text {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 18px;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
-    <h2>Acceso Usuario</h2>
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container header-inner">
 
-    <div class="tabs">
-        <button id="loginTab" class="active" onclick="showLogin()">Iniciar Sesión</button>
-        <button id="registerTab" onclick="showRegister()">Crear Cuenta</button>
+    <div class="logo">
+      <a href="index.html" class="logo-link">
+        <span class="brand">tuweb</span>
+      </a>
     </div>
 
-    <!-- LOGIN -->
-    <form id="loginForm" class="active" action="/login" method="POST">
+    <div class="nav-actions">
+      <a href="index.html">Inicio</a>
+      <a href="login.html" class="signup">Acceder</a>
+    </div>
+
+  </div>
+</header>
+
+<!-- ===== HERO coherente con tu web ===== -->
+<section class="hero triangles-bg">
+  <div class="hero-inner">
+    <h1 class="hero-title">Accede a tu cuenta</h1>
+    <p class="hero-sub">Gestiona tu perfil, publicaciones y preferencias.</p>
+  </div>
+</section>
+
+<!-- ===== SECCIÓN LOGIN ===== -->
+<section class="auth-section">
+  <div class="container">
+    <div class="auth-wrapper">
+
+      <div class="auth-tabs">
+        <button id="loginTab" class="active" onclick="showLogin()">Iniciar sesión</button>
+        <button id="registerTab" onclick="showRegister()">Crear cuenta</button>
+      </div>
+
+      <!-- LOGIN -->
+      <form id="loginForm" class="auth-form active" action="/login" method="POST">
         <input type="email" name="email" placeholder="Correo electrónico" required>
         <input type="password" name="password" placeholder="Contraseña" required>
-        <button type="submit" class="submit-btn">Entrar</button>
-    </form>
+        <button type="submit" class="auth-btn">Entrar</button>
+      </form>
 
-    <!-- REGISTRO -->
-    <form id="registerForm" action="/register" method="POST">
+      <!-- REGISTRO -->
+      <form id="registerForm" class="auth-form" action="/register" method="POST">
         <input type="text" name="nombre" placeholder="Nombre" required>
         <input type="text" name="apellidos" placeholder="Apellidos" required>
         <input type="email" name="email" placeholder="Correo electrónico" required>
         <input type="text" name="telefono" placeholder="Teléfono (opcional)">
-        <input type="password" name="password" placeholder="Contraseña" required minlength="8">
+        <input type="password" name="password" placeholder="Contraseña" minlength="8" required>
 
         <select name="rol" required>
-            <option value="">Selecciona rol</option>
-            <option value="buscador">Buscador</option>
-            <option value="propietario">Propietario</option>
+          <option value="">Selecciona tu rol</option>
+          <option value="buscador">Buscador</option>
+          <option value="propietario">Propietario</option>
         </select>
 
-        <button type="submit" class="submit-btn">Crear Cuenta</button>
-    </form>
+        <button type="submit" class="auth-btn">Crear cuenta</button>
+      </form>
 
-    <div class="small-text">
-        © 2026 - Sistema de Usuarios
+      <div class="auth-footer-text">
+        Al continuar aceptas nuestros términos y política de privacidad.
+      </div>
+
     </div>
-</div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-slogan">Encuentra tu espacio ideal</p>
+    <p class="footer-legal">
+      © 2026 TuWeb · 
+      <a href="#">Aviso legal</a> · 
+      <a href="#">Privacidad</a>
+    </p>
+  </div>
+</footer>
 
 <script>
-    function showLogin() {
-        document.getElementById("loginForm").classList.add("active");
-        document.getElementById("registerForm").classList.remove("active");
-        document.getElementById("loginTab").classList.add("active");
-        document.getElementById("registerTab").classList.remove("active");
-    }
+  function showLogin() {
+    document.getElementById("loginForm").classList.add("active");
+    document.getElementById("registerForm").classList.remove("active");
+    document.getElementById("loginTab").classList.add("active");
+    document.getElementById("registerTab").classList.remove("active");
+  }
 
-    function showRegister() {
-        document.getElementById("registerForm").classList.add("active");
-        document.getElementById("loginForm").classList.remove("active");
-        document.getElementById("registerTab").classList.add("active");
-        document.getElementById("loginTab").classList.remove("active");
-    }
+  function showRegister() {
+    document.getElementById("registerForm").classList.add("active");
+    document.getElementById("loginForm").classList.remove("active");
+    document.getElementById("registerTab").classList.add("active");
+    document.getElementById("loginTab").classList.remove("active");
+  }
 </script>
 
 </body>
